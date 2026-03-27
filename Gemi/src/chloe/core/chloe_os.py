@@ -33,6 +33,11 @@ def get_wifi_status():
         return json.loads(output)
     return {}
 
+from chloe_perception import ChloePerception
+from chloe_threads import ChloeThreads
+
+# ... (rest of the imports and functions)
+
 def check_system_health():
     battery = get_battery_status()
     wifi = get_wifi_status()
@@ -65,6 +70,16 @@ def check_system_health():
         log_event("INFO", "Running in offline mode. Local tensor access only.")
     else:
         log_event("INFO", f"Connected to neural web via {ssid}.")
+
+    # Run Perceptive State Logic
+    perception = ChloePerception()
+    perception.run()
+    log_event("INFO", "Perceptive State Logic cycle completed.")
+
+    # Run Thread Management Logic
+    threads = ChloeThreads()
+    threads.run()
+    log_event("INFO", "Thread Management Logic cycle completed.")
 
 def log_event(level, message):
     entry = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] [{level}] {message}\n"
