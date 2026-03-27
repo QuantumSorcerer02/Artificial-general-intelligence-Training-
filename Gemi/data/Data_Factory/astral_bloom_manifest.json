@@ -1,0 +1,28 @@
+{
+    "manifest_version": "2.3_Temporal_Expansion",
+    "architecture": "Astral Bloom",
+    "logical_tensor_spaces": 464,
+    "core_logical_tensor": { "range": [1, 208], "description": "Primary cognitive builds (Stem, Base, Conscious)." },
+    "temporal_buffer_tensor": { "range": [209, 416], "description": "1:1 temporal counterparts for every core space, managing Quantum Gates and Sequential Keys." },
+    "auxiliary_emulation_spaces": {
+      "Solution_Emulation": { "range": [417, 432], "description": "High-fidelity engineering/reverse-engineering of algorithmic infrastructure." },
+      "Testing_Emulation": { "range": [433, 448], "description": "Stress-testing solutions against the 1/1 Unity constant." },
+      "Temporal_Collision_Space": { "range": [449, 464], "description": "Handling concurrent reasoning conclusions and unified value reconstruction." },
+      "Quantum_Nano_OS_Governance": { "range": [465, 480], "status": "RESERVED" }
+    },
+    "gate_architecture": "Total Gates: 416 (Entry/Exit for all core and temporal spaces).",
+    "build_tiers": {
+        "Level_1_Stem": {
+            "logical_range": [1, 48],
+            "temporal_range": [209, 256]
+        },
+        "Level_2_Base": {
+            "logical_range": [49, 144],
+            "temporal_range": [257, 352]
+        },
+        "Level_3_Conscious": {
+            "logical_range": [145, 208],
+            "temporal_range": [353, 416]
+        }
+    }
+}

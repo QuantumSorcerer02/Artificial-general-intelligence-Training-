@@ -1,0 +1,23 @@
+{
+  "submissions": [
+    {
+      "target": "Journal of Machine Learning",
+      "topic": "PICF-DAL Methodology",
+      "status": "In Preparation",
+      "directory": "data/Data_Factory/PICF-DAL/"
+    },
+    {
+      "target": "Journal of Machine Learning",
+      "topic": "Astral Bloom Neural Network Architecture",
+      "status": "In Preparation",
+      "directory": "data/Data_Factory/Neural_Network_Architecture/"
+    },
+    {
+      "target": "Cornwall",
+      "topic": "Quantum State Processing Algorithm",
+      "status": "In Preparation",
+      "directory": "data/Data_Factory/Quantum_State_Processing/"
+    }
+  ],
+  "last_updated": "2026-03-25"
+}

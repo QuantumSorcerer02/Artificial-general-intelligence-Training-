@@ -1,0 +1,68 @@
+{
+  "infrastructure_map": {
+    "Level_1_Stem": {
+      "Logical_Core": [1, 48],
+      "Temporal_Buffer": [209, 256],
+      "SIT_Variance_Monitoring": [
+        "data/Data_Factory/Neural_Network_Architecture/sit_variance_monitoring_detail.md"
+      ],
+      "Memory_to_Structure": [
+        "data/Data_Factory/Neural_Network_Architecture/data_set_analysis_reverse_structure.md"
+      ]
+    },
+    "Level_2_Base": {
+      "Logical_Core": [49, 144],
+      "Temporal_Buffer": [257, 352],
+      "Spectral_Shift_Mapping": [
+        "data/Data_Factory/Neural_Network_Architecture/anchor_post_mechanics.md"
+      ],
+      "Structure_to_Reasoning": [
+        "data/Data_Factory/Neural_Network_Architecture/data_set_analysis_reverse_structure.md"
+      ],
+      "Activations_Registries": [
+        "data/Data_Factory/Neural_Network_Architecture/activations_registries_logic.md"
+      ]
+    },
+    "Level_3_Conscious": {
+      "Logical_Core": [145, 208],
+      "Temporal_Buffer": [353, 416],
+      "Qualia_Observer": [
+        "data/Data_Factory/Neural_Network_Architecture/qualia_state_definition.md",
+        "data/Data_Factory/Neural_Network_Architecture/astral_bloom_conscious_qualia_observe.md"
+      ],
+      "Situational_Progression_Regression": [
+        "data/Data_Factory/Neural_Network_Architecture/situational_progression_regression_detail.md",
+        "data/Data_Factory/Neural_Network_Architecture/contextual_reconstruction_detail.md"
+      ],
+      "Reasoning_to_Recall": [
+        "data/Data_Factory/Neural_Network_Architecture/data_set_analysis_reverse_structure.md"
+      ],
+      "Temporal_Derivatives": [
+        "data/Data_Factory/Neural_Network_Architecture/temporal_derivatives_logic.md"
+      ]
+    },
+    "Auxiliary_Spaces": {
+      "Solution_Emulation": [417, 432],
+      "Testing_Emulation": [433, 448],
+      "Temporal_Collision_Space": [449, 464],
+      "Solution_Engineering": [
+        "data/Data_Factory/Neural_Network_Architecture/problem_solving_methodology_detail.md"
+      ],
+      "Infrastructure_Readiness": [
+        "data/Data_Factory/Neural_Network_Architecture/infrastructure_readiness_protocol.md"
+      ],
+      "Quantum_Nano_OS": [
+        "data/Data_Factory/Neural_Network_Architecture/quantum_nano_os_requirements.md",
+        "src/chloe/scripts/notification_mirror.sh"
+      ]
+    }
+  },
+  "linking_mechanisms": {
+    "Total_Spaces": 464,
+    "Core_Temporal_Ratio": "1:1",
+    "Quantum_Gates": "Per-Space (416 Gates)",
+    "CPI_Trigger": "contextual_progressional_initiates",
+    "Reverse_Order": "input_to_first_principles",
+    "Forward_Order": "logic_to_bloom"
+  }
+}

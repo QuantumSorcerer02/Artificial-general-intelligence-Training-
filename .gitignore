@@ -1,0 +1,29 @@
+# Models (Large Files)
+*.safetensors
+*.onnx
+*.safetensors.index.json
+tokenizer.model
+
+# Secrets
+.env
+.elevenlabs_key
+.elevenlabs_workspace_id
+
+# Logs
+*.log
+**/logs/
+
+# Dependencies
+**/node_modules/
+**/google-cloud-sdk/
+
+# Python
+**/__pycache__/
+*.pyc
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Exclude nested git
+Gemi/.git

@@ -1,0 +1,68 @@
+#!/bin/bash
+
+echo "Setting up Gemma 3 nano model for interactive conversation..."
+
+# --- Configuration ---
+# IMPORTANT: Replace 'path/to/gemma-3-nano-weights' with the actual path to your Gemma 3 nano model weights.
+# The model weights are essential for the model to run.
+MODEL_PATH="$HOME/Project-Astral-Bloom/Gemi/tokenizer.model"
+# Using a system prompt file to guide the model's behavior.
+# This file should ideally instruct the model about its conversational role and potential tool access.
+PROMPT_FILE="chat_template.jinja" 
+
+# --- Pre-checks ---
+# Basic check for model path existence. Actual validation of model weights is more complex.
+if [ ! -f "$MODEL_PATH" ] && [ ! -d "$MODEL_PATH" ]; then
+    echo "Error: Model path '$MODEL_PATH' not found. Please ensure Gemma 3 nano weights are correctly placed and the path is accurate."
+    exit 1
+fi
+
+# Check if prompt file exists, otherwise use a generic fallback.
+if [ ! -f "$PROMPT_FILE" ]; then
+    echo "Warning: Prompt file '$PROMPT_FILE' not found. Using a generic prompt."
+    PROMPT_FILE_CONTENT="You are Chloe, an AI assistant running on Gemma 3 nano. You are designed to be conversational and have access to tools for fulfilling requests. Respond to user input."
+else
+    PROMPT_FILE_CONTENT=$(cat "$PROMPT_FILE")
+fi
+
+# --- Launching Gemma Model for Interactive Conversation ---
+echo "Starting interactive session with Gemma 3 nano..."
+echo "--------------------------------------------------"
+echo "Model Path: $MODEL_PATH"
+echo "Prompt File: $PROMPT_FILE"
+echo "--------------------------------------------------"
+echo "Note: This script initiates interaction with the Gemma model."
+echo "Achieving 'complete tool functionality' in a conversational agent requires a more advanced setup."
+echo "The current setup focuses on launching the model for conversation."
+echo "--------------------------------------------------"
+
+# --- Basic Interactive Loop Simulation ---
+# This loop reads user input and passes it to run_gemma.py.
+# It simulates a conversation but does not provide actual tool execution.
+# For true tool integration, the run_gemma.py script would need to be part of a larger agent system.
+while true; do
+    read -p "You: " user_input
+    if [[ "$user_input" == "exit" || "$user_input" == "quit" ]]; then
+        echo "Exiting interactive session."
+        break
+    fi
+
+    # Create a temporary prompt file for each user input to include context.
+    # This structure helps simulate a continuous conversation for the model.
+    TEMP_PROMPT_FILE=$(mktemp "$TEMP_PROMPT_FILE" )
+    echo -e "$Pchat_template.jinja"
+User: $user_input
+Chloe:" > "$TEMP_PROMPT_FILE"
+
+    echo "Chloe thinking..."
+    # Execute run_gemma.py with the temporary prompt.
+    # This part will output the model's simulated response.
+    python src/tools/run_gemma.py --model "$MODEL_PATH" --prompt_file "$TEMP_PROMPT_FILE"
+
+    # Clean up the temporary prompt file
+    rm "$TEMP_PROMPT_FILE"
+    echo "--------------------------------------------------"
+
+echo "Interactive session ended."
+
+EOF
