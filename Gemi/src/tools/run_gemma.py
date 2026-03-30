@@ -1,101 +1,89 @@
 import sys
 import os
 import argparse
-from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 def main():
-    parser = argparse.ArgumentParser(description="Run Gemma Model")
-    parser.add_argument("--model", type=str, required=True, help="Path to the model directory or Hugging Face model name")
-    parser.add_argument("--tokenizer", type=str, required=True, help="Path to the tokenizer directory or Hugging Face tokenizer name")
-    parser.add_argument("--prompt_file", type=str, required=True, help="Path to the prompt file")
-    parser.add_argument("--threads", type=int, default=4, help="Number of threads to use (for CPU inference if not using GPU)")
-    parser.add_argument("--interactive", action="store_true", help="If set, run in interactive mode and print responses")
+    parser = argparse.ArgumentParser(description="ASTRAL BLOOM | Chloe Neural Engine (Gemma 3)")
+    parser.add_argument("--model", type=str, required=True, help="Path to model directory")
+    parser.add_argument("--tokenizer", type=str, required=True, help="Path to tokenizer directory")
+    parser.add_argument("--prompt_file", type=str, required=True, help="Path to the prompt payload")
+    parser.add_argument("--threads", type=int, default=4, help="CPU threads for inference")
+    parser.add_argument("--interactive", type=str, default="false", help="Interactive mode toggle")
+    parser.add_argument("--grammar", type=str, help="Path to GBNF grammar file (optional)")
+    
     args, unknown = parser.parse_known_args()
+    args.interactive = args.interactive.lower() == "true"
 
-    # Determine device
+    # Optimization for Termux/ARM
+    torch.set_num_threads(args.threads)
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"Using device: {device}")
+    print(f"Using device: {device}", file=sys.stderr)
 
-    print(f"Loading tokenizer from: {args.tokenizer}")
+    # Load Tokenizer
+    print(f"Loading tokenizer from: {args.tokenizer}", file=sys.stderr)
     try:
         tokenizer = AutoTokenizer.from_pretrained(args.tokenizer)
     except Exception as e:
-        print(f"Error loading tokenizer from {args.tokenizer}: {e}")
+        print(f"[Error] Tokenizer failure: {e}", file=sys.stderr)
         sys.exit(1)
 
-    print(f"Loading Gemma model from: {args.model}")
+    # Load Model with Memory Optimization
+    print(f"Loading Gemma model from: {args.model}", file=sys.stderr)
     try:
-        # Load model with appropriate dtype and device mapping
         model = AutoModelForCausalLM.from_pretrained(
             args.model,
-            torch_dtype=torch.bfloat16 if device == "cuda" else torch.float32, # Use bfloat16 on GPU if available
-            device_map="auto", # Automatically handles device placement
-            low_cpu_mem_usage=True # Recommended for large models
+            torch_dtype=torch.float16 if device == "cpu" else torch.bfloat16,
+            device_map="auto" if device == "cuda" else None,
+            low_cpu_mem_usage=True,
+            trust_remote_code=True
         )
-        # Ensure model is on the correct device if device_map="auto" didn't fully handle it
         if device == "cpu":
-            model.to(device)
-        
-        model.eval() # Set model to evaluation mode
-
+            model = model.to(device)
+        model.eval()
     except Exception as e:
-        print(f"Error loading model from {args.model}: {e}")
-        print("Please ensure the model path is correct, the model files are complete, and necessary libraries (torch, transformers) are installed.")
+        print(f"[Error] Model load failed: {e}", file=sys.stderr)
+        print("Check if safetensors are present and transformers is up to date.", file=sys.stderr)
         sys.exit(1)
 
+    # Read Prompt Payload
     try:
         with open(args.prompt_file, 'r') as f:
             prompt_text = f.read()
-            
-        print("
---- Model Input Context ---
-")
-        print(prompt_text[:500] + "..." if len(prompt_text) > 500 else prompt_text)
-        print("
----------------------------
-")
-
-        # Tokenize the prompt
-        inputs = tokenizer(prompt_text, return_tensors="pt").to(device)
-
-        print("Generating response...")
-        # Generate text
-        # Adjust generation parameters as needed
-        with torch.no_grad(): # Disable gradient calculation for inference
-            output_sequences = model.generate(
-                **inputs,
-                max_new_tokens=256, # Limit the length of the generated response
-                do_sample=True,     # Enable sampling for more creative responses
-                temperature=0.7,    # Controls randomness (lower = more deterministic)
-                top_k=50,           # Consider only the top k tokens
-                top_p=0.95,         # Consider tokens cumulatively up to this probability
-                num_return_sequences=1, # Generate one response
-                pad_token_id=tokenizer.eos_token_id, # Use EOS token for padding
-                eos_token_id=tokenizer.eos_token_id,
-            )
-
-        # Decode the generated tokens, extracting only the newly generated part
-        input_ids = inputs.input_ids[0]
-        new_tokens_ids = output_sequences[0][len(input_ids):]
-        response_only = tokenizer.decode(new_tokens_ids, skip_special_tokens=True)
-        
-        if args.interactive:
-            print("
---- Model Response ---
-")
-            print(response_only)
-            print("
-----------------------
-")
-        else:
-            print(response_only) # For non-interactive mode
-
-    except FileNotFoundError:
-        print(f"Error: Prompt file not found at {args.prompt_file}")
-        sys.exit(1)
     except Exception as e:
-        print(f"Error during model generation: {e}")
+        print(f"[Error] Payload read failed: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    # Tokenize and Generate
+    print("Generating response...", file=sys.stderr)
+    try:
+        inputs = tokenizer(prompt_text, return_tensors="pt").to(device)
+        
+        # Generation parameters tuned for Gemma 3 Nano (416-space stability)
+        with torch.no_grad():
+            output = model.generate(
+                **inputs,
+                max_new_tokens=512,
+                do_sample=True,
+                temperature=0.8,
+                top_p=0.9,
+                repetition_penalty=1.1,
+                pad_token_id=tokenizer.eos_token_id
+            )
+        
+        # Extract Response
+        input_length = inputs.input_ids.shape[1]
+        response = tokenizer.decode(output[0][input_length:], skip_special_tokens=True)
+        
+        # Output ONLY the clean response to stdout
+        if args.interactive:
+            print(f"\n{response.strip()}")
+        else:
+            print(response.strip())
+
+    except Exception as e:
+        print(f"[Error] Inference failure: {e}", file=sys.stderr)
         sys.exit(1)
 
 if __name__ == "__main__":

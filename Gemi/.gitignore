@@ -1,3 +1,10 @@
+# Models (Large Files)
+*.safetensors
+*.onnx
+*.safetensors.index.json
+tokenizer.model
+tokenizer.json
+
 # Secrets
 .elevenlabs_key
 .elevenlabs_workspace_id

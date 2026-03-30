@@ -27,3 +27,6 @@ Thumbs.db
 
 # Exclude nested git
 Gemi/.git
+
+.gemini/
+gha-creds-*.json

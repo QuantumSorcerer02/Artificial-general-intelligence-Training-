@@ -44,31 +44,41 @@ while true; do
     read user_input
     [[ "$user_input" == "exit" ]] && break
 
-    # Create the Synthesis Payload
+    # Create the Synthesis Payload with Deep Context
     PAYLOAD=$(mktemp "$ROOT/payload.XXXXXX")
     {
-        echo "### SYSTEM MANIFEST ###"
-        cat "$MANIFEST" 2>/dev/null
-        echo -e "\n### ARCHITECTURE RULES ###"
+        echo "### IDENTITY & ARCHITECTURE ###"
         cat "$MASTER_SYNTHESIS" 2>/dev/null
+        echo -e "\n### SYSTEM MANIFEST ###"
+        cat "$MANIFEST" 2>/dev/null
+        echo -e "\n### PROJECT INFRASTRUCTURE ###"
+        echo "Root: $ROOT"
+        echo "Tools: $(ls "$ROOT/src/tools" | xargs)"
+        echo "Scripts: $(ls "$ROOT/src/chloe/scripts" | xargs)"
+        echo "Data: $(ls "$DATA_FACTORY" | xargs)"
         echo -e "\n### MEMORY CONTEXT ###\n$CONTEXT"
-        echo -e "\n### RECENT DIALOGUE ###"
+        echo -e "\n### RECENT DIALOGUE (Last 10 turns) ###"
         tail -n 10 "$BRAIN_LOG" 2>/dev/null
-        echo -e "\n### INPUT ###\n$user_input"
-        echo -e "\nCHLOE:"
+        echo -e "\n### USER INPUT ###\n$user_input"
+        echo -e "\n### CHLOE RESPONSE ###"
     } > "$PAYLOAD"
 
-    echo -ne "\033[0;36mChloe thinking...\033[0m "
+    echo -ne "\033[0;36mChloe thinking (Gemma 3 Nano Engine)...\033[0m "
 
-    # 5. EXECUTION (The "Talk Back" Force)
-    # We use 'stdbuf' to ensure the terminal flushes Chloe's voice instantly.
-    stdbuf -oL -eL python -u "$ROOT/src/tools/run_gemma.py" \
+    # 5. EXECUTION & VOCALIZATION
+    # Capture the response for vocalization and logging
+    RESPONSE=$(python -u "$ROOT/src/tools/run_gemma.py" \
         --model "$ROOT" \
-        --tokenizer "$ROOT/tokenizer.model" \
+        --tokenizer "$ROOT" \
         --prompt_file "$PAYLOAD" \
-        --grammar "$GRAMMAR" \
         --threads 4 \
-        --interactive true 2>&1 | tee -a "$BRAIN_LOG"
+        --interactive false 2> >(grep -vE "Warn|topology|L1|L2" >&2))
+
+    echo -e "\n\033[1;36mChloe:\033[0m $RESPONSE"
+    echo "CHLOE: $RESPONSE" >> "$BRAIN_LOG"
+
+    # Vocalize the response (as mandated by GEMINI.md)
+    "$ROOT/src/chloe/scripts/chloe_speak.sh" "$RESPONSE"
 
     echo "[$(date)] interaction logged." >> "$KERNEL_LOG"
     rm "$PAYLOAD"
