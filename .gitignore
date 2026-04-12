@@ -1,0 +1,33 @@
+# Models (Large Files)
+*.safetensors
+*.onnx
+*.safetensors.index.json
+tokenizer.model
+tokenizer.json
+
+# Secrets
+.elevenlabs_key
+.elevenlabs_workspace_id
+.env
+*.key
+*.token
+
+# Logs
+*.log
+chloe_voice.log
+
+# Temp files
+tmp_speech.mp3
+tmp/
+.gemini/tmp/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
