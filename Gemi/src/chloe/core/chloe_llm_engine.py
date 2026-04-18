@@ -7,9 +7,18 @@ from datetime import datetime
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import subprocess
 
+# Local imports
+try:
+    from chloe_litert_wrapper import LiteRTInference
+except ImportError:
+    # Handle direct execution or relative import
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+    from chloe_litert_wrapper import LiteRTInference
+
 # Paths
 ROOT_DIR = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi"
 MODEL_PATH = ROOT_DIR
+LITERT_MODEL_DIR = os.path.join(ROOT_DIR, "data/models")
 INPUT_FILE = os.path.join(ROOT_DIR, "data/memories/user_input.txt")
 CONV_FILE = os.path.join(ROOT_DIR, "data/memories/saved/conversations/conversation.md")
 CHLOE_MD = os.path.join(ROOT_DIR, "docs/context/CHLOE.md")
@@ -21,17 +30,37 @@ class ChloeLLMEngine:
     def __init__(self):
         self.tokenizer = None
         self.model = None
+        self.litert_engine = None
         self.device = "cpu" # Default to CPU in Termux
         self.is_active = True
         self.last_input = ""
         
     def load_model(self):
-        print(f"Chloe: Loading model from {MODEL_PATH}...")
+        # 1. Check for LiteRT (TFLite) models first (Preferred for performance)
+        tflite_models = [f for f in os.listdir(LITERT_MODEL_DIR) if f.endswith(".tflite")]
+        if tflite_models:
+            model_file = os.path.join(LITERT_MODEL_DIR, tflite_models[0])
+            self.litert_engine = LiteRTInference(model_file)
+            if self.litert_engine.interpreter:
+                print(f"Chloe: Using HIGH-PERFORMANCE LiteRT Engine ({tflite_models[0]})")
+                # We still need the processor for prompt processing
+                from transformers import AutoProcessor
+                self.processor = AutoProcessor.from_pretrained(MODEL_PATH)
+                return True
+
+        # 2. Fallback to standard Transformers (Slow but reliable)
+        print(f"Chloe: Loading Gemma 4 model from {MODEL_PATH} via Transformers (Fallback)...")
         try:
-            self.tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
+            from transformers import AutoProcessor
+            self.processor = AutoProcessor.from_pretrained(MODEL_PATH)
             # Use float32 for CPU if bfloat16 is not supported
-            self.model = AutoModelForCausalLM.from_pretrained(MODEL_PATH, torch_dtype=torch.float32)
-            print("Chloe: Model loaded successfully.")
+            self.model = AutoModelForCausalLM.from_pretrained(
+                MODEL_PATH, 
+                torch_dtype=torch.float32,
+                low_cpu_mem_usage=True,
+                trust_remote_code=True
+            )
+            print("Chloe: Gemma 4 Model loaded successfully via Transformers.")
             return True
         except Exception as e:
             print(f"Chloe Error: Failed to load model. {e}")
@@ -82,11 +111,22 @@ Operational Instructions:
         system_prompt = self.get_system_prompt()
         history = self.get_conversation_history()
         
-        full_prompt = f"{system_prompt}\n\n### CONVERSATION HISTORY:\n{history}\n\nUSER: {user_input}\nCHLOE:"
+        # Format using messages for processor (Gemma 4 format)
+        messages = [
+            {"role": "system", "content": [{"type": "text", "text": system_prompt}]},
+            {"role": "user", "content": [{"type": "text", "text": user_input}]}
+        ]
         
-        inputs = self.tokenizer(full_prompt, return_tensors="pt")
+        # Use LiteRT if available
+        if self.litert_engine:
+            # For LiteRT, we still need a string prompt if the wrapper doesn't handle messages
+            full_prompt = f"{system_prompt}\n\n### CONVERSATION HISTORY:\n{history}\n\nUSER: {user_input}\nCHLOE:"
+            return self.litert_engine.generate_text(full_prompt)
+            
+        # Fallback to Transformers
+        inputs = self.processor(text=messages, return_tensors="pt").to(self.device)
         outputs = self.model.generate(**inputs, max_new_tokens=256, temperature=0.7, top_p=0.9, do_sample=True)
-        response = self.tokenizer.decode(outputs[0][inputs['input_ids'].shape[-1]:], skip_special_tokens=True)
+        response = self.processor.batch_decode(outputs[:, inputs['input_ids'].shape[-1]:], skip_special_tokens=True)[0]
         
         return response.strip()
 

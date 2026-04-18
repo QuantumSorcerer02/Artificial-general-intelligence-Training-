@@ -5,7 +5,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 def main():
-    parser = argparse.ArgumentParser(description="ASTRAL BLOOM | Chloe Neural Engine (Gemma 3)")
+    parser = argparse.ArgumentParser(description="ASTRAL BLOOM | Chloe Neural Engine (Gemma 4)")
     parser.add_argument("--model", type=str, required=True, help="Path to model directory")
     parser.add_argument("--tokenizer", type=str, required=True, help="Path to tokenizer directory")
     parser.add_argument("--prompt_file", type=str, required=True, help="Path to the prompt payload")
@@ -21,30 +21,36 @@ def main():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}", file=sys.stderr)
 
-    # Load Tokenizer
-    print(f"Loading tokenizer from: {args.tokenizer}", file=sys.stderr)
+    # Load Tokenizer/Processor
+    print(f"Loading processor from: {args.tokenizer}", file=sys.stderr)
     try:
-        tokenizer = AutoTokenizer.from_pretrained(args.tokenizer)
+        from transformers import AutoProcessor
+        processor = AutoProcessor.from_pretrained(args.tokenizer)
     except Exception as e:
-        print(f"[Error] Tokenizer failure: {e}", file=sys.stderr)
+        print(f"[Error] Processor failure: {e}", file=sys.stderr)
         sys.exit(1)
 
     # Load Model with Memory Optimization
-    print(f"Loading Gemma model from: {args.model}", file=sys.stderr)
+    print(f"Loading Gemma 4 model from: {args.model} on {device}", file=sys.stderr)
     try:
+        # Optimization: Use float32 for CPU to avoid 'Slow conv2d' or unsupported half-prec issues
+        # Use bfloat16 for CUDA if available
+        dtype = torch.float32 if device == "cpu" else torch.bfloat16
+        
         model = AutoModelForCausalLM.from_pretrained(
             args.model,
-            torch_dtype=torch.float16 if device == "cpu" else torch.bfloat16,
+            torch_dtype=dtype,
             device_map="auto" if device == "cuda" else None,
-            low_cpu_mem_usage=True,
+            low_cpu_mem_usage=True if device == "cuda" else False,
             trust_remote_code=True
         )
         if device == "cpu":
             model = model.to(device)
         model.eval()
+        print(f"Gemma 4 Engine Ready.", file=sys.stderr)
     except Exception as e:
         print(f"[Error] Model load failed: {e}", file=sys.stderr)
-        print("Check if safetensors are present and transformers is up to date.", file=sys.stderr)
+        print("Check if model.safetensors is present and transformers is up to date.", file=sys.stderr)
         sys.exit(1)
 
     # Read Prompt Payload
@@ -58,9 +64,9 @@ def main():
     # Tokenize and Generate
     print("Generating response...", file=sys.stderr)
     try:
-        inputs = tokenizer(prompt_text, return_tensors="pt").to(device)
+        inputs = processor(text=prompt_text, return_tensors="pt").to(device)
         
-        # Generation parameters tuned for Gemma 3 Nano (416-space stability)
+        # Generation parameters tuned for Gemma 4 (416-space stability)
         with torch.no_grad():
             output = model.generate(
                 **inputs,
@@ -69,12 +75,12 @@ def main():
                 temperature=0.8,
                 top_p=0.9,
                 repetition_penalty=1.1,
-                pad_token_id=tokenizer.eos_token_id
+                pad_token_id=processor.tokenizer.eos_token_id
             )
         
         # Extract Response
         input_length = inputs.input_ids.shape[1]
-        response = tokenizer.decode(output[0][input_length:], skip_special_tokens=True)
+        response = processor.batch_decode(output[:, input_length:], skip_special_tokens=True)[0]
         
         # Output ONLY the clean response to stdout
         if args.interactive:

@@ -1,5 +1,13 @@
 {
+  "name": "gemi-astral-bloom",
+  "version": "1.0.0",
+  "description": "Project Astral Bloom - AI Infrastructure",
+  "main": "test_transformers_js.js",
+  "scripts": {
+    "test-js": "node test_transformers_js.js",
+    "test-py": "python3 test_model_loading.py"
+  },
   "dependencies": {
-    "transformers": "^3.1.0"
+    "@huggingface/transformers": "^3.1.0"
   }
 }

@@ -1,5 +1,5 @@
 root   ::= talk | action
-talk   ::= [^{]+
-action ::= "{" ws "\"tool\":" ws str "," ws "\"path\":" ws str "}"
-str    ::= "\"" [^" \n]* "\""
+talk   ::= [^\{]+
+action ::= "{" ws "\"tool\":" ws str "," ws "\"path\":" ws str ("," ws "\"args\":" ws str)? ws "}"
+str    ::= "\"" [^"\n]* "\""
 ws     ::= [ \t\n\r]*

@@ -1,38 +1,22 @@
-# Astral Bloom: Project Calendar - March 2026
+# Astral Bloom: Project Calendar - April 2026
 
 ## Weekly Overview
 
-### Week 1: March 1 - March 7
-- **Focus:** [COMPLETED] Stage 1: Stem Build (The Immutable Foundation)
-- **Status:** Retroactively Synchronized
+### Week 1: March 29 - April 4
+- **Focus:** [COMPLETED] Stage 3: Conscious Build Expansion
+- **Status:** Stability Endurance Test: Commenced 2026-03-29.
 
-### Week 2: March 8 - March 14 (CURRENT WEEK)
-- **Focus:** [ACTIVE] Stage 2: Base Build (Memory & Identity) - Part 1
-- **Current Task:** [PAUSED] Session 1 (Stem Build Q1-Q20) - *Next: Point 1 (Quantized Expansion recall mechanism).*
-
-### Week 3: March 15 - March 21
-- **Focus:** [COMPLETED] Stage 2: Base Build (Memory & Identity) - Part 2
-- **Objective:** RPPS Avoidance and Consequential Value Flow.
-
-### Week 4: March 22 - March 31 (CURRENT WEEK)
-- **Focus:** [ACTIVE] Stage 3: Conscious Build (Awareness & Interface)
-- **Objective:** Primary Internal Observation and AGSI Integration.
+### Week 2: April 5 - April 11 (CURRENT WEEK)
+- **Focus:** [ACTIVE] Re-synchronization and Platform Transition
+- **Current Task:** [ACTIVE] Re-synchronizing 464-space tensor in Termux.
 
 ---
 
-## Daily Schedule: Week 4 (March 22 - March 31)
+## Daily Schedule: April 2026
 
-- **Sunday, March 22:** [COMPLETED] Transition to Stage 3 / Structural Setup.
-- **Monday, March 23:** [COMPLETED] Section 12: Rebuilding & Evolution Start.
-- **Tuesday, March 24:** [COMPLETED] Architecture Refinement (Space 01 Temporal).
-- **Wednesday, March 25:** [COMPLETED] SIT Environmental Overviews / Section 2 Dining.
-- **Thursday, March 26:** [COMPLETED] Conscious Build Expansion (Space 145-160).
-- **Friday, March 27:** [TODAY] Perceptive State Logic & Thread Management.
-- **Saturday, March 28:** Consequential Value Weighting (Stage 3).
+- **Thursday, April 2:** [COMPLETED] Scheduled Event / Reminder (Clint).
+- **Tuesday, April 7:** [COMPLETED] Morning Synchronization.
+- **Friday, April 10:** [TODAY] Re-synchronization with 464-space architecture in Termux; AI Edge Gallery Assessment.
+- **Saturday, April 11:** Mapping Capital and Quantum Lab assets.
 
 ---
-
-## April 2026
-
-- **Thursday, April 2:** [SCHEDULED] Scheduled Event / 5:00 AM Reminder (Clint).
-

@@ -4,7 +4,7 @@ This repository contains the full infrastructure, logic, and architectural frame
 
 Due to size limitations on GitHub, the following large binary files have been excluded from this repository:
 
-- **Model Weights:** `*.safetensors` (Gemma 2 9B/27B weights)
+- **Model Weights:** `*.safetensors` (Gemma 4 E2B/E4B weights)
 - **Tokenizers:** `tokenizer.model` and `tokenizer.json`
 - **TTS Voices:** `*.onnx` files in `tts_voices/`
 

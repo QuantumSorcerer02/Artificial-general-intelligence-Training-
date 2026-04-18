@@ -1,33 +1,33 @@
-# Models (Large Files)
-*.safetensors
-*.onnx
-*.safetensors.index.json
-tokenizer.model
-tokenizer.json
-
-# Secrets
-.elevenlabs_key
-.elevenlabs_workspace_id
-.env
-*.key
-*.token
-
-# Logs
-*.log
-chloe_voice.log
-
-# Temp files
-tmp_speech.mp3
-tmp/
-.gemini/tmp/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Python
+# Build Artifacts
+llama-cli
+llama.cpp/
+data/models/
+bin/
+so/
+*.pyc
 __pycache__/
-*.py[cod]
-*$py.class
-venv/
-.venv/
+
+# Dependencies/Versions
+=*
+requirements.txt
+node_modules/
+
+# Temporary Files
+*.pid
+*.err
+*.tmp
+*.log
+data/memories/account_backup
+data/memories/new_account_backup
+
+# System/Environment
+.env
+.DS_Store
+.vscode/
+.idea/
+
+# Specific project noise
+test_file_one.txt
+test_payload.txt
+test_transformers_js.js
+chloe_logic.gbnf

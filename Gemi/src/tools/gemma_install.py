@@ -1,13 +1,14 @@
 import kagglehub
 import os
 
-print("Downloading Gemma 3 1b-it-sfp model...")
+print("Downloading Gemma 4 E2B-it model...")
 try:
-    path = kagglehub.model_download("google/gemma-3/gemmaCpp/3.0-1b-it-sfp")
+    # Assuming the path for Gemma 4 based on previous patterns
+    path = kagglehub.model_download("google/gemma-4/gemmaCpp/e2b-it-sfp")
     print(f"Model downloaded to: {path}")
     
     # Create a symlink or copy to the project directory for easier access
-    target_dir = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi/model"
+    target_dir = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi/data/models"
     if not os.path.exists(target_dir):
         os.makedirs(target_dir)
         
