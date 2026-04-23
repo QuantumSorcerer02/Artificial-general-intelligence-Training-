@@ -1,0 +1,86 @@
+Loading Gemma model from: /data/data/com.termux/files/home/Project-Astral-Bloom/Gemi
+Reading prompt from: /data/data/com.termux/files/home/Project-Astral-Bloom/Gemi/current_prompt.txt
+
+--- Model Input ---
+
+System: 
+    
+        {%- set first_user_prefix = messages[0]['content'] + '
+' -%}
+    
+        {%- set first_user_prefix = messages[0]['content'][0]['text'] + '
+' -%}
+    
+    
+    
+    
+    
+        
+    
+    
+        
+    
+        
+    
+    {{ '<start_of_turn>' + role + '
+' + (first_user_prefix if loop.first else "") }}
+    
+        
+    
+        
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+    
+    {{ '<end_of_...
+
+-------------------
+
+Model execution simulation complete. (Actual inference requires valid weights and JAX/Torch setup)
+Loading Gemma model from: /data/data/com.termux/files/home/Project-Astral-Bloom/Gemi
+Reading prompt from: /data/data/com.termux/files/home/Project-Astral-Bloom/Gemi/payload.HIyIdL
+
+--- Model Input ---
+
+### SYSTEM MANIFEST ###
+{
+    "manifest_version": "2.3_Temporal_Expansion",
+    "architecture": "Astral Bloom",
+    "logical_tensor_spaces": 464,
+    "core_logical_tensor": { "range": [1, 208], "description": "Primary cognitive builds (Stem, Base, Conscious)." },
+    "temporal_buffer_tensor": { "range": [209, 416], "description": "1:1 temporal counterparts for every core space, managing Quantum Gates and Sequential Keys." },
+    "auxiliary_emulation_spaces": {
+      "Solution_Emulation": { "rang...
+
+-------------------
+
+Model execution simulation complete. (Actual inference requires valid weights and JAX/Torch setup)
+  File "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi/src/tools/run_gemma.py", line 51
+    print("
+          ^
+SyntaxError: unterminated string literal (detected at line 51)
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 
+CHLOE: 

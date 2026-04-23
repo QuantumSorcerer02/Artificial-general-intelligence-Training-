@@ -1,0 +1,362 @@
+Note: Unnecessary use of -X or --request, POST is 
+Note: already inferred.
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0* Host api.elevenlabs.io:443 was resolved.
+* IPv6: (none)
+* IPv4: 34.8.184.191
+*   Trying 34.8.184.191:443...
+* ALPN: curl offers h2,http/1.1
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [1568 bytes data]
+* SSL Trust Anchors:
+*   CAfile: /data/data/com.termux/files/usr/etc/tls/cert.pem
+*   CApath: /data/data/com.termux/files/usr/etc/tls/certs
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* TLSv1.3 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [19 bytes data]
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [4038 bytes data]
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+{ [52 bytes data]
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+} [52 bytes data]
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / x25519 / RSASSA-PSS
+* ALPN: server accepted h2
+* Server certificate:
+*   subject: CN=elevenlabs.io
+*   start date: Feb 24 21:18:03 2026 GMT
+*   expire date: May 25 22:13:57 2026 GMT
+*   issuer: C=US; O=Google Trust Services; CN=WR3
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+*   Certificate level 1: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+*   Certificate level 2: Public key type RSA (4096/152 Bits/secBits), signed using sha384WithRSAEncryption
+*   subjectAltName: "api.elevenlabs.io" matches cert's "*.elevenlabs.io"
+* SSL certificate verified via OpenSSL.
+* Established connection to api.elevenlabs.io (34.8.184.191 port 443) from 192.168.1.238 port 37542 
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://api.elevenlabs.io/v1/text-to-speech/VGLwjpI8Foy0YmQmnFGl/stream
+* [HTTP/2] [1] [:method: POST]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: api.elevenlabs.io]
+* [HTTP/2] [1] [:path: /v1/text-to-speech/VGLwjpI8Foy0YmQmnFGl/stream]
+* [HTTP/2] [1] [user-agent: curl/8.18.0]
+* [HTTP/2] [1] [accept: */*]
+* [HTTP/2] [1] [xi-api-key: sk_REDACTED]
+* [HTTP/2] [1] [content-type: application/json]
+* [HTTP/2] [1] [content-length: 225]
+} [5 bytes data]
+> POST /v1/text-to-speech/VGLwjpI8Foy0YmQmnFGl/stream HTTP/2
+> Host: api.elevenlabs.io
+> User-Agent: curl/8.18.0
+> Accept: */*
+> xi-api-key: sk_REDACTED
+> Content-Type: application/json
+> Content-Length: 225
+> 
+} [225 bytes data]
+* upload completely sent off: 225 bytes
+} [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [284 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [284 bytes data]
+< HTTP/2 401 
+< date: Tue, 10 Mar 2026 15:40:16 GMT
+< server: uvicorn
+< content-length: 476
+< content-type: application/json
+< access-control-allow-origin: *
+< access-control-allow-headers: *
+< access-control-allow-methods: POST, PATCH, OPTIONS, DELETE, GET, PUT
+< access-control-max-age: 600
+< strict-transport-security: max-age=1800;
+< x-trace-id: f5f3f1a9f76bc2060520fdb39fc5cffb
+< x-region: europe-west4
+< via: 1.1 google
+< alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+* The requested URL returned error: 401
+< 
+100    225   0      0 100    225      0    194   00:01   00:01            194
+} [5 bytes data]
+* Connection #0 to host api.elevenlabs.io:443 left intact
+curl: (22) The requested URL returned error: 401
+play FAIL formats: can't open input  `-': 
+Tue Mar 10 17:40:17 SAST 2026: ElevenLabs failed, falling back
+Note: Unnecessary use of -X or --request, POST is 
+Note: already inferred.
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0* Host api.elevenlabs.io:443 was resolved.
+* IPv6: (none)
+* IPv4: 34.8.184.191
+*   Trying 34.8.184.191:443...
+* ALPN: curl offers h2,http/1.1
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [1568 bytes data]
+* SSL Trust Anchors:
+*   CAfile: /data/data/com.termux/files/usr/etc/tls/cert.pem
+*   CApath: /data/data/com.termux/files/usr/etc/tls/certs
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* TLSv1.3 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [19 bytes data]
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [4038 bytes data]
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+{ [52 bytes data]
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+} [52 bytes data]
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / x25519 / RSASSA-PSS
+* ALPN: server accepted h2
+* Server certificate:
+*   subject: CN=elevenlabs.io
+*   start date: Feb 24 21:18:03 2026 GMT
+*   expire date: May 25 22:13:57 2026 GMT
+*   issuer: C=US; O=Google Trust Services; CN=WR3
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+*   Certificate level 1: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+*   Certificate level 2: Public key type RSA (4096/152 Bits/secBits), signed using sha384WithRSAEncryption
+*   subjectAltName: "api.elevenlabs.io" matches cert's "*.elevenlabs.io"
+* SSL certificate verified via OpenSSL.
+* Established connection to api.elevenlabs.io (34.8.184.191 port 443) from 192.168.1.238 port 37564 
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://api.elevenlabs.io/v1/text-to-speech/VGLwjpI8Foy0YmQmnFGl/stream
+* [HTTP/2] [1] [:method: POST]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: api.elevenlabs.io]
+* [HTTP/2] [1] [:path: /v1/text-to-speech/VGLwjpI8Foy0YmQmnFGl/stream]
+* [HTTP/2] [1] [user-agent: curl/8.18.0]
+* [HTTP/2] [1] [accept: */*]
+* [HTTP/2] [1] [xi-api-key: sk_REDACTED]
+* [HTTP/2] [1] [content-type: application/json]
+* [HTTP/2] [1] [content-length: 590]
+} [5 bytes data]
+> POST /v1/text-to-speech/VGLwjpI8Foy0YmQmnFGl/stream HTTP/2
+> Host: api.elevenlabs.io
+> User-Agent: curl/8.18.0
+> Accept: */*
+> xi-api-key: sk_REDACTED
+> Content-Type: application/json
+> Content-Length: 590
+> 
+} [590 bytes data]
+* upload completely sent off: 590 bytes
+} [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [284 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [284 bytes data]
+< HTTP/2 401 
+< date: Tue, 10 Mar 2026 15:41:13 GMT
+< server: uvicorn
+< content-length: 476
+< content-type: application/json
+< access-control-allow-origin: *
+< access-control-allow-headers: *
+< access-control-allow-methods: POST, PATCH, OPTIONS, DELETE, GET, PUT
+< access-control-max-age: 600
+< strict-transport-security: max-age=1800;
+< x-trace-id: 12fa2815e1959809bf13344a37d2b157
+< x-region: europe-west4
+< via: 1.1 google
+< alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+* The requested URL returned error: 401
+< 
+{ [5 bytes data]
+
+* Connection #0 to host api.elevenlabs.io:443 left intact
+curl: (22) The requested URL returned error: 401
+play FAIL formats: can't open input  `-': 
+Tue Mar 10 17:41:13 SAST 2026: ElevenLabs failed, falling back
+Note: Unnecessary use of -X or --request, POST is 
+Note: already inferred.
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0* Host api.elevenlabs.io:443 was resolved.
+* IPv6: (none)
+* IPv4: 34.8.184.191
+*   Trying 34.8.184.191:443...
+* ALPN: curl offers h2,http/1.1
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [1568 bytes data]
+* SSL Trust Anchors:
+*   CAfile: /data/data/com.termux/files/usr/etc/tls/cert.pem
+*   CApath: /data/data/com.termux/files/usr/etc/tls/certs
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* TLSv1.3 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [19 bytes data]
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [4038 bytes data]
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+{ [52 bytes data]
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+} [52 bytes data]
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / x25519 / RSASSA-PSS
+* ALPN: server accepted h2
+* Server certificate:
+*   subject: CN=elevenlabs.io
+*   start date: Feb 24 21:18:03 2026 GMT
+*   expire date: May 25 22:13:57 2026 GMT
+*   issuer: C=US; O=Google Trust Services; CN=WR3
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+*   Certificate level 1: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+*   Certificate level 2: Public key type RSA (4096/152 Bits/secBits), signed using sha384WithRSAEncryption
+*   subjectAltName: "api.elevenlabs.io" matches cert's "*.elevenlabs.io"
+* SSL certificate verified via OpenSSL.
+* Established connection to api.elevenlabs.io (34.8.184.191 port 443) from 192.168.1.238 port 37572 
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://api.elevenlabs.io/v1/text-to-speech/VGLwjpI8Foy0YmQmnFGl/stream
+* [HTTP/2] [1] [:method: POST]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: api.elevenlabs.io]
+* [HTTP/2] [1] [:path: /v1/text-to-speech/VGLwjpI8Foy0YmQmnFGl/stream]
+* [HTTP/2] [1] [user-agent: curl/8.18.0]
+* [HTTP/2] [1] [accept: */*]
+* [HTTP/2] [1] [xi-api-key: sk_REDACTED]
+* [HTTP/2] [1] [content-type: application/json]
+* [HTTP/2] [1] [content-length: 1010]
+} [5 bytes data]
+> POST /v1/text-to-speech/VGLwjpI8Foy0YmQmnFGl/stream HTTP/2
+> Host: api.elevenlabs.io
+> User-Agent: curl/8.18.0
+> Accept: */*
+> xi-api-key: sk_REDACTED
+> Content-Type: application/json
+> Content-Length: 1010
+> 
+} [1010 bytes data]
+* upload completely sent off: 1010 bytes
+} [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [284 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [284 bytes data]
+< HTTP/2 401 
+< date: Tue, 10 Mar 2026 15:42:00 GMT
+< server: uvicorn
+< content-length: 476
+< content-type: application/json
+< access-control-allow-origin: *
+< access-control-allow-headers: *
+< access-control-allow-methods: POST, PATCH, OPTIONS, DELETE, GET, PUT
+< access-control-max-age: 600
+< strict-transport-security: max-age=1800;
+< x-trace-id: ac5bab46273544b0406a7f5aa0fb8815
+< x-region: europe-west4
+< via: 1.1 google
+< alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+* The requested URL returned error: 401
+< 
+{ [5 bytes data]
+
+* Connection #0 to host api.elevenlabs.io:443 left intact
+curl: (22) The requested URL returned error: 401
+play FAIL formats: can't open input  `-': 
+Tue Mar 10 17:42:01 SAST 2026: ElevenLabs failed, falling back
+play FAIL formats: can't open input  `-': 
+Tue Mar 10 17:46:04 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 17:46:37 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 17:47:25 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 17:59:14 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 17:59:51 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 18:00:34 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 18:01:35 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 18:10:53 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 18:14:52 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 19:37:05 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 21:51:40 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 23:44:02 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 23:45:13 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 23:47:10 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 23:48:30 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 23:52:22 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 23:54:44 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 23:58:12 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 10 23:59:14 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 00:02:10 SAST 2026: ElevenLabs failed. Body: 
+Wed Mar 11 00:08:50 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 00:10:12 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 00:12:20 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 00:13:19 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 00:15:32 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 00:17:18 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 00:20:01 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 00:22:03 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 00:23:33 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 01:29:45 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 07:42:41 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 10:52:07 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 10:53:05 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 10:55:57 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 10:57:12 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 11:01:03 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 11:02:45 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 11:05:22 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 11:11:47 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 11:13:37 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 11:23:25 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 11:25:50 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 11:28:09 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 11:41:32 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 12:39:22 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 20:19:10 SAST 2026: ElevenLabs failed. Body: {"detail":[{"type":"json_invalid","loc":["body",546],"msg":"JSON decode error","input":{},"ctx":{"error":"Invalid control character at"}}]}
+Wed Mar 11 20:23:41 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 20:37:00 SAST 2026: ElevenLabs failed. Body: {"detail":[{"type":"json_invalid","loc":["body",402],"msg":"JSON decode error","input":{},"ctx":{"error":"Invalid control character at"}}]}
+Wed Mar 11 20:41:59 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 20:43:33 SAST 2026: ElevenLabs failed. Body: {"detail":[{"type":"json_invalid","loc":["body",135],"msg":"JSON decode error","input":{},"ctx":{"error":"Invalid control character at"}}]}
+Wed Mar 11 20:47:23 SAST 2026: ElevenLabs failed. Body: {"detail":[{"type":"json_invalid","loc":["body",152],"msg":"JSON decode error","input":{},"ctx":{"error":"Invalid control character at"}}]}
+Wed Mar 11 20:51:56 SAST 2026: ElevenLabs failed. Body: {"detail":[{"type":"json_invalid","loc":["body",145],"msg":"JSON decode error","input":{},"ctx":{"error":"Invalid control character at"}}]}
+Wed Mar 11 20:57:18 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 21:03:37 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 21:05:07 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Wed Mar 11 21:09:26 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Sat Mar 14 18:06:41 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Sat Mar 14 18:08:31 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Sat Mar 14 18:10:10 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Sat Mar 14 18:30:09 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Sat Mar 14 19:17:21 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Sat Mar 14 19:20:27 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Sat Mar 14 19:32:26 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Mon Mar 16 15:36:32 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Mon Mar 16 15:38:44 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Mon Mar 16 15:40:23 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Mon Mar 16 16:03:58 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Mon Mar 16 20:37:46 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Mon Mar 16 20:39:13 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 17 10:42:41 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 17 10:45:46 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 17 10:46:58 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 17 10:48:29 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 17 10:55:57 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 17 10:59:15 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 17 11:27:28 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 17 11:29:00 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Tue Mar 17 11:37:07 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
+Sat Mar 21 10:36:10 SAST 2026: ElevenLabs failed. Body: {"detail":{"status":"detected_unusual_activity","message":"Unusual activity detected. Free Tier usage disabled. If you are using a proxy/VPN you might need to purchase a Paid Plan to not trigger our abuse detectors. Free Tier only works if users do not abuse it, for example by creating multiple free accounts. If we notice that many people try to abuse it, we will need to reconsider Free Tier altogether. \nPlease play fair and purchase any Paid Subscription to continue."}}
