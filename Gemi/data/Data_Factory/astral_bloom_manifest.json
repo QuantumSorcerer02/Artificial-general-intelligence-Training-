@@ -1,7 +1,7 @@
 {
     "manifest_version": "2.9_Quantum_Math_Synthesis",
     "architecture": "Astral Bloom",
-    "logical_tensor_spaces": 464,
+    "logical_tensor_spaces": 416,
     "milestones": {
       "file_indexing": 38083,
       "hardware_opt": "7GB RAM (4GB + 3GB Emulated) on Qualcomm SM4250",

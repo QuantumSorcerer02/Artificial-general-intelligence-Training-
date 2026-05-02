@@ -58,7 +58,7 @@
     }
   },
   "linking_mechanisms": {
-    "Total_Spaces": 464,
+    "Total_Spaces": 416,
     "Core_Temporal_Ratio": "1:1",
     "Quantum_Gates": "Per-Space (416 Gates)",
     "CPI_Trigger": "contextual_progressional_initiates",

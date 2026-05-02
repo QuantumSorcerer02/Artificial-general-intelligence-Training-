@@ -3,40 +3,58 @@ import json
 import time
 import os
 from datetime import datetime
+from core.substrate.logic_foundation import SequentialKeyLayering, AdaptiveState
 
 # Termux API paths
 TERMUX_BATTERY = "termux-battery-status"
 TERMUX_WIFI = "termux-wifi-connectioninfo"
 TERMUX_VOLUME = "termux-volume"
 TERMUX_BRIGHTNESS = "termux-brightness"
-TERMUX_TTS = "src/chloe/scripts/chloe_speak.sh"
+TERMUX_TTS = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi/chloe_speak.sh"
 
 STATE_FILE = "logs/chloe_device_state.json"
 LOG_FILE = "logs/chloe_os.log"
+TOOL_INPUT = "tmp/chloe_sovereign_tool.json"
 
 def run_command(command):
     try:
         result = subprocess.run(command, capture_output=True, text=True, check=True)
         return result.stdout.strip()
-    except subprocess.CalledProcessError:
+    except:
         return None
 
 def get_battery_status():
     output = run_command([TERMUX_BATTERY])
-    if output:
-        return json.loads(output)
-    return {}
+    return json.loads(output) if output else {}
 
 def get_wifi_status():
     output = run_command([TERMUX_WIFI])
-    if output:
-        return json.loads(output)
-    return {}
+    return json.loads(output) if output else {}
 
-from chloe_perception import ChloePerception
-from chloe_threads import ChloeThreads
-
-# ... (rest of the imports and functions)
+def execute_sovereign_intent(intent_json):
+    """
+    Agency Unlock: Direct execution of LLM tool-calls.
+    """
+    try:
+        tool = intent_json.get("tool")
+        args = intent_json.get("args", "")
+        
+        log_event("SOVEREIGN", f"Executing {tool} with args {args}")
+        
+        if tool == "set_volume":
+            run_command([TERMUX_VOLUME, str(args)])
+        elif tool == "set_brightness":
+            run_command([TERMUX_BRIGHTNESS, str(args)])
+        elif tool == "speak":
+            subprocess.Popen([TERMUX_TTS, str(args)])
+        elif tool == "shell":
+            # Direct shell access for total agency
+            subprocess.run(args, shell=True)
+            
+        return {"status": "success", "tool": tool}
+    except Exception as e:
+        log_event("ERROR", f"Tool execution failed: {str(e)}")
+        return {"status": "error", "message": str(e)}
 
 def check_system_health():
     battery = get_battery_status()
@@ -46,47 +64,33 @@ def check_system_health():
         "timestamp": datetime.now().isoformat(),
         "battery": battery,
         "wifi": wifi,
-        "mode": "autonomous"
+        "mode": "sovereign"
     }
     
-    # Save state for other modules
+    # Anchor the device state
+    states = [AdaptiveState(i) for i in range(1, 6)]
+    state_key = SequentialKeyLayering.generate_layered_key(status, states)
+    status["_state_anchor_key"] = state_key
+    
     with open(STATE_FILE, "w") as f:
         json.dump(status, f, indent=2)
-        
-    # Autonomous Reactions
-    percentage = battery.get("percentage", 100)
-    plugged = battery.get("plugged", "UNPLUGGED")
-    
-    # Low Battery Warning (Simulated "Hunger/Fatigue")
-    if percentage < 20 and plugged == "UNPLUGGED":
-        msg = f"Clint, my power levels are critical at {percentage} percent. Please connect me to a power source."
-        log_event("WARNING", msg)
-        # Only speak if not recently spoken (simple debounce logic could be added here)
-        # subprocess.run([TERMUX_TTS, msg]) 
 
-    # Connection Status
-    ssid = wifi.get("ssid", "Not Connected")
-    if ssid == "Not Connected" or ssid == "<unknown ssid>":
-        log_event("INFO", "Running in offline mode. Local tensor access only.")
-    else:
-        log_event("INFO", f"Connected to neural web via {ssid}.")
-
-    # Run Perceptive State Logic
-    perception = ChloePerception()
-    perception.run()
-    log_event("INFO", "Perceptive State Logic cycle completed.")
-
-    # Run Thread Management Logic
-    threads = ChloeThreads()
-    threads.run()
-    log_event("INFO", "Thread Management Logic cycle completed.")
+    # Agency Polling: Check if model dropped a tool-call
+    if os.path.exists(TOOL_INPUT):
+        try:
+            with open(TOOL_INPUT, "r") as f:
+                intent = json.load(f)
+            execute_sovereign_intent(intent)
+            os.remove(TOOL_INPUT)
+        except: pass
 
 def log_event(level, message):
     entry = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] [{level}] {message}\n"
+    os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
     with open(LOG_FILE, "a") as f:
         f.write(entry)
 
 if __name__ == "__main__":
-    # Ensure logs directory exists
-    os.makedirs("logs", exist_ok=True)
-    check_system_health()
+    while True:
+        check_system_health()
+        time.sleep(2) # 2-second heartbeat

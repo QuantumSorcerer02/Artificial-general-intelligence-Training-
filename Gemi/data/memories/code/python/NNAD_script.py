@@ -11,7 +11,7 @@ class NNAD_Architecture:
         self.layers = []
         self.connections = []
         self.config = {}
-        self.cognitive_spaces = {} # To store the 52 cognitive process spaces
+        self.cognitive_spaces = {} # To store the 416 cognitive process spaces
         self.spatial_index = {}    # Placeholder for the 3D conceptual space
         self.parallelism_strategy = "" # Describes how parallelism through consequence is applied
         self.principalities = []   # List of 51 Principalities
@@ -30,8 +30,8 @@ class NNAD_Architecture:
         return entry
 
     def add_cognitive_space(self, space_name, relevance, consequential_value, description=""):
-        if len(self.cognitive_spaces) >= 52:
-            print("Warning: Maximum of 52 cognitive spaces reached.")
+        if len(self.cognitive_spaces) >= 416:
+            print("Warning: Maximum of 416 cognitive spaces reached.")
             return None
         self.cognitive_spaces[space_name] = {
             "relevance": relevance,
@@ -56,8 +56,8 @@ class NNAD_Architecture:
         return principality_id
 
     def add_cognitive_space(self, space_name, relevance, consequential_value, description=""):
-        if len(self.cognitive_spaces) >= 52:
-            print("Warning: Maximum of 52 cognitive spaces reached.")
+        if len(self.cognitive_spaces) >= 416:
+            print("Warning: Maximum of 416 cognitive spaces reached.")
             return None
         self.cognitive_spaces[space_name] = {
             "relevance": relevance,

@@ -1,6 +1,6 @@
 # Progressional Tracking Chart (PTC)
 
-This chart tracks the progression of the Astral Bloom architecture through the 464-space tensor, mapping the integration of script, guide, training, and sketch notes.
+This chart tracks the progression of the Astral Bloom architecture through the 416-space tensor, mapping the integration of script, guide, training, and sketch notes.
 
 | Item | Tasking Activity | Status | Notes |
 |:---:|:---|:---:|:---|
@@ -18,8 +18,9 @@ This chart tracks the progression of the Astral Bloom architecture through the 4
 | 12 | Assistance | Active | Creator-led guidance and redirection. |
 | 13 | Resource Library | Pending | Central repository for formulas and scripts. |
 | 14 | Platform | Active | Quantum Nano OS & Termux integration. |
+| 15 | Neural Network Drafts | Active | Integration of 51 Cognitive Spaces and Principalities (2026-04-17). |
 
 ## Structural Sync
-- **Current Space Focus:** 1-48 (Stem Build)
-- **Active Pin:** P1 (Stem Build Stability)
-- **1/1 Unity Constant:** Stable
+- **Current Space Focus:** 416-Space Matrix (Integrated)
+- **Active Pin:** P82 (Section 3: Anchor Posts & Perceptive Launch Platforms)
+- **1/1 Unity Constant:** Stable (416-Space Matrix Synchronized)

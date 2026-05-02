@@ -1,0 +1,17 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="quantum-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f3ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9d00ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Hexagonal Matrix -->
+  <path d="M100 20 L170 60 L170 140 L100 180 L30 140 L30 60 Z" fill="none" stroke="url(#quantum-grad)" stroke-width="4" />
+  <!-- Internal Connections -->
+  <line x1="100" y1="20" x2="100" y2="180" stroke="url(#quantum-grad)" stroke-width="1" stroke-dasharray="4" />
+  <line x1="30" y1="60" x2="170" y2="140" stroke="url(#quantum-grad)" stroke-width="1" stroke-dasharray="4" />
+  <line x1="170" y1="60" x2="30" y2="140" stroke="url(#quantum-grad)" stroke-width="1" stroke-dasharray="4" />
+  <!-- The 7 -->
+  <path d="M70 70 L130 70 L100 130 L100 150" fill="none" stroke="#e0e0e0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="100" y="195" text-anchor="middle" fill="#00f3ff" font-family="monospace" font-size="12">SYNDICATE 7</text>
+</svg>

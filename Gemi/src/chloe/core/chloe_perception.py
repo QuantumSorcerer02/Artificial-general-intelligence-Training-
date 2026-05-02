@@ -12,6 +12,9 @@ except ImportError:
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     from chloe_litert_wrapper import LiteRTInference
 
+from core.architecture.unified_matrix import UnifiedMatrix
+from core.substrate.logic_foundation import SequentialKeyLayering, AdaptiveState
+
 class ChloePerception:
     """
     Manages the 'Perceptive State' of Chloe, monitoring the environment and context.
@@ -19,11 +22,13 @@ class ChloePerception:
     """
     def __init__(self, root_dir="/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi"):
         self.root_dir = root_dir
+        self.matrix = UnifiedMatrix()
         self.state_file = os.path.join(self.root_dir, "logs/chloe_perceptive_state.json")
         self.litert_model_dir = os.path.join(self.root_dir, "data/models")
         self.context_cluster = {}
         self.sensory_data = {}
         self.vision_engine = None
+        self.adaptive_states = [AdaptiveState(i) for i in range(1, 6)]
         
         # Load Vision Engine if a vision-specific model exists
         if os.path.exists(self.litert_model_dir):
@@ -116,10 +121,16 @@ class ChloePerception:
                 self.sensory_data = {"error": "Failed to parse device state"}
         
     def save_perceptive_state(self):
+        # Generate an Anchored Sequential Key for the current state (Section 2)
+        state_anchor_key = SequentialKeyLayering.generate_layered_key(self.context_cluster, self.adaptive_states)
+        
+        # Verify space context via Unified Matrix (Space 165: Observe)
+        target_space = self.matrix.get_space(165)
+
         state = {
             "context_cluster": self.context_cluster,
             "sensory_data": self.sensory_data,
-            "qualia_anchor": "The 1/1 Unity constant remains stable."
+            "qualia_anchor": f"1/1 Unity stable. Space: {target_space.name if target_space else 'None'}. State Key: {state_anchor_key}"
         }
         try:
             with open(self.state_file, "w") as f:

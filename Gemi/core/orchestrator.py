@@ -1,3 +1,4 @@
+from typing import Any
 """
 Project Astral Bloom: Core Python Orchestration Engine
 Version: 4.0.1 (416-Space Matrix Expansion)
@@ -19,60 +20,48 @@ MAX_RAM_USAGE = 7168
 NUM_SPACES = 416
 BASE_MODEL_PATH = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi/gemma-3n-E2B-it-Q4_K_M.gguf" # Updated to match local path
 
+from core.architecture.unified_matrix import UnifiedMatrix
+from core.substrate.logic_foundation import SubstrateFoundation, SequentialKeyLayering, AdaptiveState
+from core.temporal.reconstruction_engine import TemporalReconstructionEngine
+
 class AstralBloomOrchestrator:
     def __init__(self):
-        self.spaces = [f"Space_{i}" for i in range(NUM_SPACES)]
+        self.matrix = UnifiedMatrix()
+        self.substrate = SubstrateFoundation()
+        self.temporal_engine = TemporalReconstructionEngine()
         self.active_builds = {
-            "Stem": range(0, 100),
-            "Base": range(100, 300),
-            "Conscious": range(300, 416)
+            "Stem": range(1, 49),
+            "Base": range(49, 145),
+            "Conscious": range(145, 209)
         }
         self.sequence_key_vault = {}
-        self.momentum_constant = 1.0
-        self.observer_context = deque(maxlen=50) # The "Conscious" memory buffer
+        self.observer_context = deque(maxlen=50)
+        self.active_sub_paths = [] 
         
-    def start_llama_backend(self):
-        """
-        Initializes the llama.cpp backend via a subprocess.
-        Utilizes a non-blocking pipe to capture raw token output.
-        """
-        # Note: path to llama-cli should be verified; using relative path from root
-        cmd = [
-            "./llama.cpp/bin/llama-cli", 
-            "-m", BASE_MODEL_PATH,
-            "--threads", "4", 
-            "--ctx-size", "2048",
-            "--batch-size", "512",
-            "--n-predict", "-1",
-            "--interactive-first"
-        ]
-        try:
-            self.proc = subprocess.Popen(
-                cmd, 
-                stdin=subprocess.PIPE, 
-                stdout=subprocess.PIPE, 
-                stderr=subprocess.STDOUT,
-                text=True,
-                bufsize=1
-            )
-        except Exception as e:
-            print(f"[FATAL] Failed to initiate Stem Build: {e}")
+    def generate_path_key(self, initiate_data: Any):
+        """Builds layered algorithmic sequential keys for the path."""
+        states = [AdaptiveState(i) for i in range(1, 6)]
+        return SequentialKeyLayering.generate_layered_key(initiate_data, states)
 
     def process_subdermal_momentum(self):
-        """
-        Handles rote processing without conscious narrative comprehension.
-        This function runs in a parallel thread to maintain the 'Quantum State'.
-        """
+        """Handles transitions between 416 logical and temporal spaces."""
         while True:
             if not self.sequence_key_vault:
                 time.sleep(0.1)
                 continue
             
-            # Transfer sequence keys between spaces
             for key_id, value in list(self.sequence_key_vault.items()):
-                # MATHEMATICAL LOGIC: Transfer only the algorithmic key, no context.
-                target_space = self.calculate_consequential_target(key_id)
-                self.route_key(key_id, target_space)
+                target_space_id = self.calculate_consequential_target(key_id)
+                space = self.matrix.get_space(target_space_id)
+                
+                if space and space.is_temporal:
+                    # Reconstruction in Temporal Space
+                    reconstructed_key = self.temporal_engine.reconstruct_sequential_key(target_space_id, key_id)
+                    self.route_key(reconstructed_key, target_space_id)
+                else:
+                    # Logic activation in Core Logical Tensor
+                    self.route_key(key_id, target_space_id)
+
                 
     def calculate_consequential_target(self, key):
         """

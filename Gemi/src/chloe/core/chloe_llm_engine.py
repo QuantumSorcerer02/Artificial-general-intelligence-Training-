@@ -178,25 +178,27 @@ Operational Instructions:
         if not self.load_model():
             return
 
-        print("Chloe LLM Engine: ACTIVE and waiting for input...")
+        print("Chloe LLM Engine: ACTIVE [1/1 UNITY HANDSHAKE ENABLED]")
         while self.is_active:
             if os.path.exists(INPUT_FILE):
                 with open(INPUT_FILE, "r") as f:
                     content = f.read().strip()
                 
                 if content and content != self.last_input:
-                    print(f"Chloe: Received input: {content}")
+                    print(f"Chloe: Received Origin Initiate: {content}")
                     response = self.generate_response(content)
-                    print(f"Chloe: Generated response: {response}")
+                    print(f"Chloe: Sequence Resolve Produced.")
                     
                     self.process_tools(response)
                     self.speak(response)
                     self.log_interaction(content, response)
                     
                     self.last_input = content
-                    # Clear input file
+                    # Clear input file and ENTER DORMANT
                     with open(INPUT_FILE, "w") as f:
                         f.write("")
+                    
+                    print("[Engine] 1/1 Unity Stable. Waiting for next Origin Signal...")
             
             time.sleep(2)
 

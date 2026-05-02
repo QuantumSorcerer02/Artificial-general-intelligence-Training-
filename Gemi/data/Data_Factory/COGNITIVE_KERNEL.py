@@ -9,7 +9,7 @@ ROOT_DIR = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi"
 INPUT_FILE = os.path.join(ROOT_DIR, "data/memories/user_input.txt")
 CONV_FILE = os.path.join(ROOT_DIR, "data/memories/saved/conversations/conversation.md")
 CHLOE_MD = os.path.join(ROOT_DIR, "docs/context/CHLOE.md")
-MASTER_CONTEXT = os.path.join(ROOT_DIR, "docs/context/ASTRAL_BLOOM_MASTER_CONTEXT.txt")
+CONV_SUMMARY = os.path.join(ROOT_DIR, "docs/context/ASTRAL_BLOOM_CONVERSATION_SUMMARY.txt")
 SYSTEM_ALERT_FILE = os.path.join(ROOT_DIR, "data/memories/system_alerts.txt")
 
 class CognitiveKernel:
@@ -63,11 +63,11 @@ class CognitiveKernel:
                     f.write(new_content)
                 print("Kernel: Architecture updated to EVOLVING state.")
 
-    def sync_master_context(self):
-        """Periodically refreshes the Master Context file for global observation."""
+    def sync_conversation_summary(self):
+        """Periodically refreshes the Conversation Summary file."""
         if os.path.exists(CONV_FILE):
-            # Keep the last 100 lines for the master context
-            cmd = f"tail -n 100 {CONV_FILE} > {MASTER_CONTEXT}"
+            # Keep the last 100 lines for the conversation summary
+            cmd = f"tail -n 100 {CONV_FILE} > {CONV_SUMMARY}"
             subprocess.run(cmd, shell=True)
 
     def run_loop(self):
@@ -86,7 +86,7 @@ class CognitiveKernel:
             # 2. Check system hardware (every 60 seconds)
             if cycle % 12 == 0:
                 self.check_system_state()
-                self.sync_master_context()
+                self.sync_conversation_summary()
             
             cycle += 1
             time.sleep(5)

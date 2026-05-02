@@ -6,6 +6,8 @@ bin/
 so/
 *.pyc
 __pycache__/
+*.gguf
+*.bak
 
 # Dependencies/Versions
 =*
@@ -19,12 +21,18 @@ node_modules/
 *.log
 data/memories/account_backup
 data/memories/new_account_backup
+tmp/
 
 # System/Environment
 .env
 .DS_Store
 .vscode/
 .idea/
+.elevenlabs_key
+.elevenlabs_workspace_id
+
+# Database/State
+vault/
 
 # Specific project noise
 test_file_one.txt

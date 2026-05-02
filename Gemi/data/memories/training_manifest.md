@@ -19,4 +19,4 @@ This manifest tracks the 12 sections of the Super Intelligence Training.
 
 ## Notes
 - Sections are bridged through the 'Domino Moment' of integrated succession.
-- Each section corresponds to a specific range of the 464-space tensor.
+- Each section corresponds to a specific range of the 416-space tensor.
