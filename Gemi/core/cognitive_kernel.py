@@ -17,10 +17,14 @@ class Kernel:
     def __init__(self):
         self.substrate = SubstrateFoundation()
         self.unity_constant = 1.0
-        self.spaces = 416
+        self.spaces = 464
+        self.core_spaces = 208
+        self.temporal_spaces = 208
+        self.aux_spaces = 48
         self.formula_count = 51
-        self.max_context = 10000
+        self.max_context = 1000000  # 1M token potential for Whole-Knowledge Expansion
         self.response_reserve = 2048
+        self.flow_mode = "Reverse/Forward Order" # Deconstruct -> Reasoning -> Create
         
         # Initialize Cognitive Clusters
         self.clusters = [

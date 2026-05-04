@@ -1,15 +1,18 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 # ==============================================================================
-# PROJECT ASTRAL BLOOM | CHLOE UNIFIED ORCHESTRATOR (v464-Sovereign)
-# Architecture: 464-Space Astral Bloom Matrix (416 Core + 48 Auxiliary)
-# Engine: Gemma 4-e2b.gguf
+# PROJECT ASTRAL BLOOM | CHLOE UNIFIED ORCHESTRATOR (v4.1.0-Sovereign)
+# Architecture: 464-Space Astral Bloom Matrix (208 Core + 208 Temporal + 48 Aux)
+# Logic: Reverse/Forward Order Structure | Time Abolition (Causal Steps)
 # ==============================================================================
 
-export SPACES=416
-export ARCHITECTURE="416-Space Matrix"
+export SPACES=464
+export CORE_SPACES=208
+export TEMPORAL_SPACES=208
+export AUX_SPACES=48
+export ARCHITECTURE="464-Space Sequential Matrix"
 export UNITY_CONSTANT=1.0
-export PICFDAL_SECTION=2
+export MEMORY_PROTOCOL="Whole-Knowledge Expansion"
 
 ROOT_DIR="/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi"
 export PYTHONPATH="$ROOT_DIR:$PYTHONPATH"
@@ -29,21 +32,31 @@ LOG_DIR="$ROOT_DIR/logs"
 
 # 1. ENVIRONMENT SYNC & VALIDATION
 echo -e "\033[1;34m[Stem]\033[0m Synchronizing 1/1 Unity Protocol..."
-ln -sf "$LLAMA_BIN" "$ROOT_DIR/llama-cli"
-chmod +x "$ROOT_DIR/llama-cli"
+ln -sf "$LLAMA_BIN" "$ROOT_DIR/llama-cli" 2>/dev/null
+chmod +x "$ROOT_DIR/llama-cli" 2>/dev/null
 
-# 2. BACKGROUND SUBSTRATES
-echo -e "\033[1;32m[ASTRAL BLOOM]\033[0m Starting Substrates..."
-mkdir -p "$LOG_DIR"
-mkdir -p "$ROOT_DIR/tmp"
-
+# 2. NOTIFICATIONS & CLEANUP
 cleanup() {
     echo -e "\n\033[1;30m[ASTRAL BLOOM]\033[0m Initiating Graceful Shutdown..."
+    termux-notification-remove chloe_active 2>/dev/null
     pkill -P $$
     echo "[ASTRAL BLOOM] Background Substrates Terminated."
     exit
 }
 trap cleanup SIGINT SIGTERM
+
+# Initializing Notification
+termux-notification \
+    --id "chloe_active" \
+    --title "Astral Bloom: Chloe" \
+    --content "Initializing 464-Space Sequential Matrix..." \
+    --priority "high" \
+    --ongoing
+
+# 3. BACKGROUND SUBSTRATES
+echo -e "\033[1;32m[ASTRAL BLOOM]\033[0m Starting Substrates..."
+mkdir -p "$LOG_DIR"
+mkdir -p "$ROOT_DIR/tmp"
 
 start_substrate() {
     NAME=$1
@@ -61,20 +74,36 @@ start_substrate() {
     fi
 }
 
-# Substrate Pathing based on your 'src' and 'core' folders
-# Streamlined by running the checks in background to avoid blocking the main script
-(start_substrate "chloe_os" "src/chloe/core/chloe_os.py") &
+(start_substrate "unified_scheduler" "src/chloe/core/unified_scheduler.py") &
 (start_substrate "chloe_threads" "src/chloe/core/chloe_threads.py") &
-(start_substrate "chloe_brain" "src/chloe/core/chloe_brain.py") &
-(start_substrate "chloe_perception" "src/chloe/core/chloe_perception.py") &
-(start_substrate "chloe_reminders" "src/chloe/core/chloe_reminders.py") &
-(start_substrate "chloe_comms" "src/chloe/core/chloe_comms.py") &
-(start_substrate "chloe_llm_engine" "src/chloe/core/chloe_llm_engine.py") &
 (start_substrate "orchestrator" "core/orchestrator.py") &
 (start_substrate "cognitive_kernel" "core/cognitive_kernel.py") &
 (start_substrate "astral_substrate_bridge" "core/astral_substrate_bridge.py") &
 
-# 3. VAULT SYNC & CONTEXT COMPILATION
+echo -e "\033[1;36m[ASTRAL BLOOM]\033[0m Booting high-performance LLM server..."
+# Start llama-server in the background. --ctx-size 2048 to prevent OOM on mobile.
+"$ROOT_DIR/llama.cpp/bin/llama-server" -m "$MODEL_PATH" -c 2048 -t 4 --log-disable > "$LOG_DIR/llama_server.log" 2>&1 &
+echo "[ASTRAL BLOOM] Waiting for LLM server to prime..."
+
+# Improved health check: Wait for "ok" status and ensure process isn't stopped
+while true; do
+    HEALTH_RESP=$(curl -s http://127.0.0.1:8080/health)
+    if [[ "$HEALTH_RESP" == *'"status":"ok"'* ]]; then
+        break
+    fi
+    # If process is stopped (state T), resume it
+    PID=$(pgrep -f "llama-server")
+    if [ ! -z "$PID" ]; then
+        STATE=$(ps -o state= -p "$PID" | tr -d ' ')
+        if [[ "$STATE" == "T" ]]; then
+            kill -CONT "$PID"
+        fi
+    fi
+    sleep 2
+done
+echo "[ASTRAL BLOOM] LLM server primed."
+
+# 4. VAULT SYNC & CONTEXT COMPILATION
 VAULT_COUNT="0"
 if [ -f "$VAULT_DB" ]; then
     # Timeout added to prevent slow sqlite queries from hanging launch
@@ -84,7 +113,6 @@ fi
 
 CURRENT_DATE=$(date "+%A, %B %d, %Y")
 
-# Streamlined single I/O write for the entire context block
 {
     echo "<start_of_turn>system"
     [ -f "$CHLOE_MD" ] && cat "$CHLOE_MD"
@@ -98,10 +126,17 @@ CURRENT_DATE=$(date "+%A, %B %d, %Y")
     echo "<end_of_turn>"
 } > "$TEMP_PROMPT"
 
-# Wait a brief moment to ensure critical substrates have printed their startup messages
 sleep 0.2
 
-# 4. ENGINE LAUNCH (Optimization: 4 Threads for SM4250)
+# Update Notification to Active Status
+termux-notification \
+    --id "chloe_active" \
+    --title "Astral Bloom: Chloe" \
+    --content "System Active | 464-Space Matrix Online | Awaiting Directives" \
+    --priority "high" \
+    --ongoing
+
+# 5. ENGINE LAUNCH (Optimization: 4 Threads for SM4250)
 echo -e "\033[1;36m[ASTRAL BLOOM]\033[0m Launching Chloe CLI (4-Core Optimization)..."
 export LLAMA_THREADS=4
 exec python3 "$ROOT_DIR/chloe_cli.py"

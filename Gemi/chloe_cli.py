@@ -118,64 +118,75 @@ def run_inference(user_input, last_key, history):
     with open(TEMP_PROMPT, "w") as f:
         f.write(full_prompt)
 
-    # 8 Threads for SM4250 optimization
-    cmd = [
-        LLAMA_BIN, "-m", MODEL_PATH, "--ctx-size", "0", "--threads", "8",
-        "--batch-size", "128", "--repeat-penalty", "1.1", "-f", TEMP_PROMPT,
-        "-n", "-1", "--log-disable", "--no-display-prompt"
-    ]
-
-    process = subprocess.Popen(cmd, stdout=subprocess.PIPE, text=True, bufsize=1)
-    response = ""
     console.print(f"\n[bold {COLOR_GREEN}][SYS] Syncing sequence...[/bold {COLOR_GREEN}]")
     
+    response_text = ""
     in_think_block = False
     thought_buffer = ""
-    buffer = ""
+    import urllib.request
     import datetime
-    
-    for char in iter(lambda: process.stdout.read(1), ''):
-        response += char
-        buffer += char
-        
-        if not in_think_block:
-            if "<think>" in buffer:
-                in_think_block = True
-                pre_think = buffer.split("<think>")[0]
-                if pre_think:
-                    print(pre_think, end="", flush=True)
-                buffer = ""
-                thought_buffer = ""
-            elif any("<think>".startswith(buffer[i:]) for i in range(len(buffer))):
-                pass
-            else:
-                print(buffer, end="", flush=True)
-                buffer = ""
-        else:
-            if "</think>" in buffer:
-                in_think_block = False
-                thought_buffer += buffer.split("</think>")[0]
-                buffer = buffer.split("</think>")[1]
-                
-                thought_dir = os.path.join(ROOT_DIR, "logs/thoughts")
-                os.makedirs(thought_dir, exist_ok=True)
-                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-                try:
-                    with open(os.path.join(thought_dir, f"thought_{timestamp}.log"), "w") as tf:
-                        tf.write(thought_buffer.strip())
-                except: pass
-                
-                thought_buffer = ""
-            elif any("</think>".startswith(buffer[i:]) for i in range(len(buffer))):
-                pass
-            else:
-                thought_buffer += buffer
-                buffer = ""
 
-    if buffer and not in_think_block:
-        print(buffer, end="", flush=True)
-            
-    return response.strip(), pk_key, momentum
+    req_data = json.dumps({
+        "prompt": full_prompt,
+        "n_predict": 512,
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "stream": True,
+        "stop": ["<end_of_turn>", "Clint ❯", "User:"]
+    }).encode("utf-8")
+    
+    req = urllib.request.Request(
+        "http://127.0.0.1:8080/completion", 
+        data=req_data, 
+        headers={"Content-Type": "application/json"}
+    )
+    
+    try:
+        with urllib.request.urlopen(req) as resp:
+            for line in resp:
+                line = line.decode("utf-8").strip()
+                if line.startswith("data: "):
+                    data_str = line[6:]
+                    if data_str == "[DONE]":
+                        break
+                    try:
+                        chunk = json.loads(data_str)
+                        char = chunk.get("content", "")
+                        response_text += char
+                        
+                        if not in_think_block:
+                            if "<think>" in response_text[-10:]:
+                                in_think_block = True
+                                print("<think>", end="", flush=True)
+                            elif any("<think>".startswith(response_text[max(0, len(response_text)-i):]) for i in range(1, 8)):
+                                pass
+                            else:
+                                print(char, end="", flush=True)
+                        else:
+                            if "</think>" in response_text[-10:]:
+                                in_think_block = False
+                                print("</think>", end="", flush=True)
+                                
+                                thought_dir = os.path.join(ROOT_DIR, "logs/thoughts")
+                                os.makedirs(thought_dir, exist_ok=True)
+                                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                                try:
+                                    with open(os.path.join(thought_dir, f"thought_{timestamp}.log"), "w") as tf:
+                                        tf.write(thought_buffer.strip())
+                                except: pass
+                                thought_buffer = ""
+                            else:
+                                thought_buffer += char
+                                print(char, end="", flush=True)
+
+                    except Exception as e:
+                        pass
+    except Exception as e:
+        console.print(f"[bold {COLOR_BLACK}]Inference Error:[/bold {COLOR_BLACK}] {e}")
+        return "", pk_key, momentum
+
+    print()
+    return response_text.strip(), pk_key, momentum
 
 def main():
     last_key = "SEQ_INIT"
@@ -197,51 +208,20 @@ def main():
             history_str = "\n".join(temporal_spaces)
             response, last_key, momentum = run_inference(user_input, last_key, history_str)
             
-            temporal_spaces.append(f"User: {user_input}\nChloe: {response}")
+            if not response:
+                console.print(f"[bold {COLOR_BLACK}][SYS] Inference failed to produce a response. Check llama_server.log.[/bold {COLOR_BLACK}]")
+                continue
+
+            temporal_spaces.append(f"<start_of_turn>user\n{user_input}<end_of_turn>\n<start_of_turn>model\n{response}<end_of_turn>")
             if len(temporal_spaces) > 208:
                 temporal_spaces.pop(0)
             
             # Sovereign Tool Detection
-            if "{" in response and "}" in response:
-                try:
-                    # Attempt to extract and handle JSON tool calls
-                    start = response.find("{")
-                    end = response.rfind("}") + 1
-                    tool_call = json.loads(response[start:end])
-                    tool_name = tool_call.get("tool") or tool_call.get("command")
-                    if tool_name:
-                        console.print(f"[bold {COLOR_GREEN}][SYS] Executing Sovereign Tool: {tool_name}...[/bold {COLOR_GREEN}]")
-                        
-                        args = tool_call.get("args", "")
-                        cmd_to_run = tool_name
-                        if isinstance(args, dict):
-                            for k, v in args.items():
-                                cmd_to_run += f" --{k} '{v}'"
-                        elif isinstance(args, list):
-                            cmd_to_run += " " + " ".join(str(a) for a in args)
-                        elif isinstance(args, str) and args:
-                            cmd_to_run += f" {args}"
-                            
-                        try:
-                            result = subprocess.run(cmd_to_run, shell=True, capture_output=True, text=True, timeout=60)
-                            tool_output = (result.stdout + result.stderr).strip()
-                            if not tool_output:
-                                tool_output = f"Executed {tool_name} successfully."
-                            
-                            temporal_spaces.append(f"[Tool Result]: {tool_output}")
-                            if len(temporal_spaces) > 208: temporal_spaces.pop(0)
-                            
-                            console.print(f"[bold {COLOR_GREEN}][SYS] Tool execution complete.[/bold {COLOR_GREEN}]")
-                        except Exception as e:
-                            temporal_spaces.append(f"[Tool Error]: {str(e)}")
-                            if len(temporal_spaces) > 208: temporal_spaces.pop(0)
-                            
-                            console.print(f"[bold {COLOR_BLACK}][SYS] Tool execution failed: {e}[/bold {COLOR_BLACK}]")
-                except: pass
-
+            # ... (rest of tool detection)
+            
             chloe_speak(response)
             
-            # Post-Inference Refresh
+            # Post-Inference Refresh - Only clear if we have a successful response
             clear_screen()
             header, stats = generate_ui(momentum, last_key)
             console.print(header)

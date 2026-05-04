@@ -1,82 +1,54 @@
 import os
 import sys
-import torch
 import json
 import time
+import urllib.request
 from datetime import datetime
-from transformers import AutoTokenizer, AutoModelForCausalLM
 import subprocess
-
-# Local imports
-try:
-    from chloe_litert_wrapper import LiteRTInference
-except ImportError:
-    # Handle direct execution or relative import
-    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-    from chloe_litert_wrapper import LiteRTInference
 
 # Paths
 ROOT_DIR = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi"
-MODEL_PATH = ROOT_DIR
-LITERT_MODEL_DIR = os.path.join(ROOT_DIR, "data/models")
 INPUT_FILE = os.path.join(ROOT_DIR, "data/memories/user_input.txt")
 CONV_FILE = os.path.join(ROOT_DIR, "data/memories/saved/conversations/conversation.md")
 CHLOE_MD = os.path.join(ROOT_DIR, "docs/context/CHLOE.md")
 MASTER_CONTEXT = os.path.join(ROOT_DIR, "docs/context/ASTRAL_BLOOM_MASTER_CONTEXT.txt")
 COMMS_SCRIPT = os.path.join(ROOT_DIR, "src/chloe/core/chloe_comms.py")
-SPEAK_SCRIPT = os.path.join(ROOT_DIR, "src/chloe/scripts/chloe_speak.sh")
+SPEAK_SCRIPT = os.path.join(ROOT_DIR, "chloe_speak.sh")
 
 class ChloeLLMEngine:
     def __init__(self):
-        self.tokenizer = None
-        self.model = None
-        self.litert_engine = None
-        self.device = "cpu" # Default to CPU in Termux
         self.is_active = True
         self.last_input = ""
         
     def load_model(self):
-        # 1. Check for LiteRT (TFLite) models first (Preferred for performance)
-        tflite_models = [f for f in os.listdir(LITERT_MODEL_DIR) if f.endswith(".tflite")]
-        if tflite_models:
-            model_file = os.path.join(LITERT_MODEL_DIR, tflite_models[0])
-            self.litert_engine = LiteRTInference(model_file)
-            if self.litert_engine.interpreter:
-                print(f"Chloe: Using HIGH-PERFORMANCE LiteRT Engine ({tflite_models[0]})")
-                # We still need the processor for prompt processing
-                from transformers import AutoProcessor
-                self.processor = AutoProcessor.from_pretrained(MODEL_PATH)
-                return True
-
-        # 2. Fallback to standard Transformers (Slow but reliable)
-        print(f"Chloe: Loading Gemma 4 model from {MODEL_PATH} via Transformers (Fallback)...")
-        try:
-            from transformers import AutoProcessor
-            self.processor = AutoProcessor.from_pretrained(MODEL_PATH)
-            # Use float32 for CPU if bfloat16 is not supported
-            self.model = AutoModelForCausalLM.from_pretrained(
-                MODEL_PATH, 
-                torch_dtype=torch.float32,
-                low_cpu_mem_usage=True,
-                trust_remote_code=True
-            )
-            print("Chloe: Gemma 4 Model loaded successfully via Transformers.")
-            return True
-        except Exception as e:
-            print(f"Chloe Error: Failed to load model. {e}")
-            return False
+        # We now rely on the unified llama-server booted by chloe.sh
+        # Wait for the server to be responsive
+        print("Chloe: Checking unified Astral Bloom LLM Server...")
+        for _ in range(30):
+            try:
+                req = urllib.request.Request("http://127.0.0.1:8080/health")
+                with urllib.request.urlopen(req, timeout=1) as response:
+                    if response.status == 200:
+                        print("Chloe: Unified LLM Server is online and primed.")
+                        return True
+            except:
+                time.sleep(1)
+        print("Chloe Error: LLM Server did not respond in time.")
+        return False
 
     def get_system_prompt(self):
-        # 1. Load CHLOE.md (Identity)
-        with open(CHLOE_MD, "r") as f:
-            chloe_md = f.read()
+        chloe_md = ""
+        if os.path.exists(CHLOE_MD):
+            with open(CHLOE_MD, "r") as f:
+                chloe_md = f.read()
         
-        # 2. Load Master Context (Principles/History)
-        with open(MASTER_CONTEXT, "r") as f:
-            master_context = f.read()
+        master_context = ""
+        if os.path.exists(MASTER_CONTEXT):
+            with open(MASTER_CONTEXT, "r") as f:
+                master_context = f.read()
         
-        # 3. Combine into a system prompt
-        system_prompt = f"""You are Chloe, an autonomous device intelligence and the core of the Astral Bloom project.
+        system_prompt = f"""<start_of_turn>system
+You are Chloe, an autonomous device intelligence and the core of the Astral Bloom project.
 Your identity and architecture are defined in the following context:
 
 {chloe_md}
@@ -96,7 +68,7 @@ Operational Instructions:
   - CALENDAR: <summary> | <description>
   - NOTIFY: <title> | <content>
 - Your responses should be conversational, professional, and aligned with your identity as Chloe.
-- You must acknowledge the 'contextual world' and use the 'memories' from previous interactions.
+- You must acknowledge the 'contextual world' and use the 'memories' from previous interactions.<end_of_turn>
 """
         return system_prompt
 
@@ -111,24 +83,35 @@ Operational Instructions:
         system_prompt = self.get_system_prompt()
         history = self.get_conversation_history()
         
-        # Format using messages for processor (Gemma 4 format)
-        messages = [
-            {"role": "system", "content": [{"type": "text", "text": system_prompt}]},
-            {"role": "user", "content": [{"type": "text", "text": user_input}]}
-        ]
+        full_prompt = f"{system_prompt}\n### TEMPORAL RECONSTRUCTION (HISTORY):\n{history}\n<start_of_turn>user\n{user_input}<end_of_turn>\n<start_of_turn>model\n"
         
-        # Use LiteRT if available
-        if self.litert_engine:
-            # For LiteRT, we still need a string prompt if the wrapper doesn't handle messages
-            full_prompt = f"{system_prompt}\n\n### CONVERSATION HISTORY:\n{history}\n\nUSER: {user_input}\nCHLOE:"
-            return self.litert_engine.generate_text(full_prompt)
-            
-        # Fallback to Transformers
-        inputs = self.processor(text=messages, return_tensors="pt").to(self.device)
-        outputs = self.model.generate(**inputs, max_new_tokens=256, temperature=0.7, top_p=0.9, do_sample=True)
-        response = self.processor.batch_decode(outputs[:, inputs['input_ids'].shape[-1]:], skip_special_tokens=True)[0]
+        req_data = json.dumps({
+            "prompt": full_prompt,
+            "n_predict": 512,
+            "temperature": 0.7,
+            "top_p": 0.9,
+            "stop": ["<end_of_turn>", "Clint ❯", "User:"]
+        }).encode("utf-8")
         
-        return response.strip()
+        req = urllib.request.Request(
+            "http://127.0.0.1:8080/completion", 
+            data=req_data, 
+            headers={"Content-Type": "application/json"}
+        )
+        
+        try:
+            with urllib.request.urlopen(req) as resp:
+                result = json.loads(resp.read().decode("utf-8"))
+                response_text = result.get("content", "")
+                
+                # Clean up <think> blocks
+                if "</think>" in response_text:
+                    response_text = response_text.split("</think>")[-1]
+                
+                return response_text.strip()
+        except Exception as e:
+            print(f"Inference error: {e}")
+            return "System Fault: Unable to reach core logic."
 
     def process_tools(self, response):
         lines = response.split("\n")
@@ -156,7 +139,6 @@ Operational Instructions:
                     subprocess.run(["python3", COMMS_SCRIPT, "notification", title, content])
 
     def speak(self, text):
-        # Remove tool commands from the text to be spoken
         clean_text = []
         for line in text.split("\n"):
             if not any(line.startswith(cmd) for cmd in ["CALL:", "SMS:", "CALENDAR:", "NOTIFY:"]):

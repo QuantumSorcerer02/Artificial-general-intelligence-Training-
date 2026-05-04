@@ -16,11 +16,11 @@ SPEED=140
 # If the process is interrupted, it attempts to restart.
 # This does NOT trigger new logic in the LLM.
 
-espeak-ng -v $VOICE -p $PITCH -s $SPEED "$TEXT"
+termux-tts-speak "$TEXT"
 RET=$?
 
 if [ $RET -ne 0 ] && [ $RET -ne 130 ]; then
     # Brief pause before resume to allow OS to stabilize
     sleep 1
-    espeak-ng -v $VOICE -p $PITCH -s $SPEED "$TEXT"
+    termux-tts-speak "$TEXT"
 fi

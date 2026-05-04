@@ -1,8 +1,13 @@
 {
   "model_engine": "Gemma 4",
-  "architecture": "Project Astral Bloom",
+  "architecture": "Project Astral Bloom v4.1.0",
   "tensor_spaces": 464,
+  "core_distribution": {
+    "logical": 208,
+    "temporal": 208,
+    "auxiliary": 48
+  },
   "quantization": "Q6_K/Q8_0",
   "hardware_acceleration": "Snapdragon 460 (Octa-core)",
-  "memory_strategy": "Truncated Delegation"
+  "memory_strategy": "Whole-Knowledge Expansion"
 }
