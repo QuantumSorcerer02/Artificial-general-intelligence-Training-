@@ -1,0 +1,11 @@
+#!/bin/bash
+# Gemi CLI Wrapper
+# Sets up the environment to run the Gemi/Astral Bloom CLI found in 'memories/code/python'
+
+# Get the directory of the script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+
+# Set PYTHONPATH to include the 'code/python' directory
+export PYTHONPATH="$ROOT_DIR/data/memories/code/python:$PYTHONPATH"
+

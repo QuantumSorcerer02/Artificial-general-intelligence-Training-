@@ -20,15 +20,15 @@ class CognitiveSpace:
 
 class AstralBloomCore:
     def __init__(self):
-        self.spaces = [CognitiveSpace(i, self._get_type(i)) for i in range(416)]
+        self.spaces = [CognitiveSpace(i, self._get_type(i)) for i in range(464)]
         self.momentum = 0.0
         # Octa-core maximized: 8 threads for PTC
         self.pool = concurrent.futures.ThreadPoolExecutor(max_workers=8)
         self.state_file = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi/vault/astral_state.json"
 
     def _get_type(self, i):
-        if i < 100: return "Stem"
-        if i < 300: return "Base"
+        if i < 112: return "Stem"
+        if i < 320: return "Base"
         return "Conscious"
 
     def process_sequence(self, seed_key):

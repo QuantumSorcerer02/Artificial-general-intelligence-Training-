@@ -12,7 +12,7 @@ from rich.table import Table
 from rich import box
 from core.cognitive_engine import AstralBloomCore
 from core.substrate.logic_foundation import SequentialKeyLayering, AdaptiveState
-from core.cognitive_kernel import FORMULA_ENGINE
+from core.astral_kernel import ASTRAL_ENGINE as kernel
 
 # Configuration & Paths
 ROOT_DIR = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi"
@@ -49,9 +49,9 @@ def generate_ui(momentum, last_key, status="PRIMED", threads="8 (Maximized)"):
     
     header_grid.add_row(
         Text("CHLOE UNIFIED ORCHESTRATOR", style=f"bold {COLOR_BLUE}"),
-        Text.assemble(("416-Space Matrix ", f"bold {COLOR_BLUE}"), ("[SYNC]", f"bold {COLOR_GREEN}"))
+        Text.assemble(("464-Space Matrix ", f"bold {COLOR_BLUE}"), ("[SYNC]", f"bold {COLOR_GREEN}"))
     )
-    header_grid.add_row(Text("v464-Sovereign", style=f"bold {COLOR_BLUE}"), "")
+    header_grid.add_row(Text("v5.2.0 Sovereign", style=f"bold {COLOR_BLUE}"), "")
     
     # Combined Layout Panel
     stats_table = Table(show_header=False, expand=True, box=box.DOUBLE, border_style=COLOR_BLUE, padding=(0,0))
@@ -81,17 +81,25 @@ def run_inference(user_input, last_key, history):
     next_key, momentum = core_engine.process_sequence(last_key)
     pk_key = f"SEQ_{SequentialKeyLayering.generate_layered_key(user_input, adaptive_states)[:8]}"
     
-    # Context management: limit context to fit within device RAM limits
+    # Context management: limit context to fit within server/RAM limits
     try:
         with open(TEMP_PROMPT, "r") as f:
             content = f.read()
             if "<end_of_turn>" in content:
-                # Keep the system prompt block
-                base_prompt = content.split("<end_of_turn>")[0] + "<end_of_turn>"
+                # Keep core system identity but truncate if massive
+                system_parts = content.split("<end_of_turn>")
+                base_prompt = system_parts[0]
+                if len(base_prompt) > 4000:
+                    base_prompt = base_prompt[:2000] + "\n... [TRUNCATED] ...\n" + base_prompt[-2000:]
+                base_prompt += "<end_of_turn>\n"
             else:
-                base_prompt = content
+                base_prompt = content[:4000]
     except:
         base_prompt = "<start_of_turn>system\n# Astral Bloom Identity Active.<end_of_turn>\n"
+        
+    # Truncate history to keep recent context only
+    if len(history) > 2000:
+        history = "... [EARLIER HISTORY TRUNCATED] ...\n" + history[-2000:]
         
     # Dynamic Context Retrieval
     dynamic_context = ""
@@ -109,14 +117,22 @@ def run_inference(user_input, last_key, history):
             conn.close()
     except Exception:
         pass
-        
+    
     full_prompt = base_prompt + dynamic_context + f"\n### TEMPORAL RECONSTRUCTION (HISTORY)\n{history}\n<start_of_turn>user\n{user_input}<end_of_turn>\n<start_of_turn>model\n"
+
+
     
     # Process prompt through Cognitive Kernel
-    full_prompt = FORMULA_ENGINE.execute_cognitive_pipeline(full_prompt, momentum)
+    full_prompt = kernel.execute_cognitive_pipeline(full_prompt, momentum)
+
+    # FINAL FAIL-SAFE: Hard limit for llama-server context window (2048 tokens approx 8k chars)
+    # We use 6000 to be safe and leave room for the 512 completion tokens.
+    if len(full_prompt) > 6000:
+        full_prompt = full_prompt[:3000] + "\n... [EMERGENCY TRUNCATION] ...\n" + full_prompt[-3000:]
 
     with open(TEMP_PROMPT, "w") as f:
         f.write(full_prompt)
+
 
     console.print(f"\n[bold {COLOR_GREEN}][SYS] Syncing sequence...[/bold {COLOR_GREEN}]")
     

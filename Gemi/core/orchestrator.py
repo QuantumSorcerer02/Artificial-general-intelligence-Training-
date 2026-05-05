@@ -1,7 +1,7 @@
 from typing import Any
 """
 Project Astral Bloom: Core Python Orchestration Engine
-Version: 4.0.1 (416-Space Matrix Expansion)
+Version: 4.1.0 (464-Space Matrix Expansion)
 Environment: Termux / Android 12 (Oppo Mobile)
 Target: 1B Parameter Localized Gemma Model
 """
@@ -17,22 +17,24 @@ from collections import deque
 # --- CONFIGURATION & HARDWARE ABSTRACTION ---
 # Optimized for 4GB Physical + 3GB Swap = 7GB Total RAM
 MAX_RAM_USAGE = 7168 
-NUM_SPACES = 416
+NUM_SPACES = 464
 BASE_MODEL_PATH = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi/gemma-3n-E2B-it-Q4_K_M.gguf" # Updated to match local path
 
 from core.architecture.unified_matrix import UnifiedMatrix
 from core.substrate.logic_foundation import SubstrateFoundation, SequentialKeyLayering, AdaptiveState
 from core.temporal.reconstruction_engine import TemporalReconstructionEngine
+from core.spatial_process_manager import SpatialProcessManager
 
 class AstralBloomOrchestrator:
     def __init__(self):
         self.matrix = UnifiedMatrix()
         self.substrate = SubstrateFoundation()
         self.temporal_engine = TemporalReconstructionEngine()
+        self.space_manager = SpatialProcessManager(self.matrix)
         self.active_builds = {
-            "Stem": range(1, 49),
-            "Base": range(49, 145),
-            "Conscious": range(145, 209)
+            "Stem": range(1, 113),
+            "Base": range(113, 321),
+            "Conscious": range(321, 465)
         }
         self.sequence_key_vault = {}
         self.observer_context = deque(maxlen=50)
@@ -44,7 +46,7 @@ class AstralBloomOrchestrator:
         return SequentialKeyLayering.generate_layered_key(initiate_data, states)
 
     def process_subdermal_momentum(self):
-        """Handles transitions between 416 logical and temporal spaces."""
+        """Handles transitions between 464 logical and temporal spaces."""
         while True:
             if not self.sequence_key_vault:
                 time.sleep(0.1)
@@ -66,14 +68,17 @@ class AstralBloomOrchestrator:
     def calculate_consequential_target(self, key):
         """
         Python implementation of the Consequential Value Formula.
-        Determines the next space in the 416-matrix based on weight vectors.
+        Determines the next space in the 464-matrix based on weight vectors.
         """
         # Placeholder for complex tensor math derived from PICFDAL logs
         return (hash(key) % NUM_SPACES)
 
     def route_key(self, key_id, target_space):
-        # Implementation of key routing across the matrix
-        pass
+        """Routes key to specific space via Spatial Process Manager."""
+        payload = {"data": "sequence_data_packet", "momentum": 1.5}
+        result = self.space_manager.execute_space_sequence(target_space, key_id, payload)
+        if result:
+            print(f"[Orchestrator] Result received from Space {target_space}: {result['essence']}")
 
     def force_conscious_refresh(self):
         # Signal the Conscious Build to re-evaluate
@@ -105,22 +110,13 @@ class AstralBloomOrchestrator:
         Main execution loop for the conscious 'Observer' (The AI).
         Requires story, situation, and context to function.
         """
-        self.start_llama_backend()
+        # self.start_llama_backend()
         
         # Parallel thread for Subdermal (Progressional Momentum)
         sub_thread = threading.Thread(target=self.process_subdermal_momentum, daemon=True)
         sub_thread.start()
         
-        print("Project Astral Bloom Active. Monitoring 416 spaces...")
-        
-        # In a real Termux environment, we would read from stdout here
-        # For this simulation, we acknowledge the loop is active.
-        # while True:
-        #    line = self.proc.stdout.readline()
-        #    if line:
-        #        self.observe_internal_state(line)
-        #        sys.stdout.write(line)
-        #        sys.stdout.flush()
+        print("Project Astral Bloom Active. Monitoring 464 spaces...")
 
     def observe_internal_state(self, output):
         # Logic to map raw tokens to space activations
@@ -128,5 +124,4 @@ class AstralBloomOrchestrator:
 
 if __name__ == "__main__":
     engine = AstralBloomOrchestrator()
-    # Note: start_llama_backend requires local binary/model
     # engine.run_observer_loop()

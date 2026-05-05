@@ -1,0 +1,5134 @@
+{
+  "schema_id": "legacy_default_v1",
+  "version": 1,
+  "default_animation": "climb_left",
+  "initial_candidates": [
+    "fall",
+    "creep_right"
+  ],
+  "animations": [
+    {
+      "key": "stand_left",
+      "type": "GROUND",
+      "subtype": "STAND",
+      "level": 1,
+      "loop": "ONESHOT",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 0,
+          "durationTicks": 75
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "stand_right",
+      "type": "GROUND",
+      "subtype": "STAND",
+      "level": 1,
+      "loop": "ONESHOT",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 0,
+          "durationTicks": 75
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "walk_left",
+      "type": "GROUND",
+      "subtype": "WALK",
+      "level": 1,
+      "loop": "LOOP",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 27,
+          "dx": -2,
+          "durationTicks": 14
+        },
+        {
+          "sprite": 1,
+          "dx": -2,
+          "durationTicks": 14
+        },
+        {
+          "sprite": 28,
+          "dx": -2,
+          "durationTicks": 14
+        },
+        {
+          "sprite": 2,
+          "dx": -2,
+          "durationTicks": 14
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      },
+      "borderTransitions": [
+        {
+          "when": "LEFT",
+          "choices": [
+            {
+              "to": "stand_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "stand_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "walk_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_look_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_look_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sprawl_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sprawl_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "wink_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "wink_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "tripping_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "creep_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "climb_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "descend_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "walk_right",
+      "type": "GROUND",
+      "subtype": "WALK",
+      "level": 1,
+      "loop": "LOOP",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 27,
+          "dx": 2,
+          "durationTicks": 14
+        },
+        {
+          "sprite": 1,
+          "dx": 2,
+          "durationTicks": 14
+        },
+        {
+          "sprite": 28,
+          "dx": 2,
+          "durationTicks": 14
+        },
+        {
+          "sprite": 2,
+          "dx": 2,
+          "durationTicks": 14
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      },
+      "borderTransitions": [
+        {
+          "when": "RIGHT",
+          "choices": [
+            {
+              "to": "stand_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "stand_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "walk_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_look_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_look_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sprawl_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sprawl_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "wink_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "wink_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "tripping_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "creep_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "descend_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fall",
+      "type": "AIR",
+      "subtype": "FALL",
+      "level": 1,
+      "loop": "LOOP",
+      "direction": "ANY",
+      "frames": [
+        {
+          "sprite": 3,
+          "dy": 15,
+          "durationTicks": 250
+        }
+      ],
+      "borderTransitions": [
+        {
+          "when": "BOTTOM",
+          "choices": [
+            {
+              "to": "bounce_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "bounce_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "jump_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "fall",
+            "weight": 1
+          }
+        ]
+      }
+    },
+    {
+      "key": "bounce_left",
+      "type": "GROUND",
+      "subtype": "BOUNCE",
+      "level": 1,
+      "loop": "ONESHOT",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 15,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 16,
+          "durationTicks": 10
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "bounce_right",
+      "type": "GROUND",
+      "subtype": "BOUNCE",
+      "level": 1,
+      "loop": "ONESHOT",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 15,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 16,
+          "durationTicks": 10
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "climb_left",
+      "type": "WALL",
+      "subtype": "CLIMB",
+      "level": 1,
+      "loop": "LOOP",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 11,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 40,
+          "dy": -1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 9,
+          "dy": -1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 10,
+          "dy": -1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 41,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 42,
+          "dy": -2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 43,
+          "dy": -2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 44,
+          "dy": -2,
+          "durationTicks": 10
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "descend_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "climb_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      },
+      "borderTransitions": [
+        {
+          "when": "TOP",
+          "choices": [
+            {
+              "to": "descend_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_ceiling_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_ceiling_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "climb_right",
+      "type": "WALL",
+      "subtype": "CLIMB",
+      "level": 1,
+      "loop": "LOOP",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 11,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 40,
+          "dy": -1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 9,
+          "dy": -1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 10,
+          "dy": -1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 41,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 42,
+          "dy": -2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 43,
+          "dy": -2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 44,
+          "dy": -2,
+          "durationTicks": 10
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "descend_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "climb_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      },
+      "borderTransitions": [
+        {
+          "when": "TOP",
+          "choices": [
+            {
+              "to": "descend_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "climb_ceiling_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_ceiling_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "climb_ceiling_left",
+      "type": "CEILING",
+      "subtype": "HANG",
+      "level": 1,
+      "loop": "LOOP",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 22,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 53,
+          "dx": -1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 20,
+          "dx": -1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 21,
+          "dx": -1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 54,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 55,
+          "dx": -2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 56,
+          "dx": -2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 57,
+          "dx": -2,
+          "durationTicks": 10
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "climb_ceiling_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "climb_ceiling_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      },
+      "borderTransitions": [
+        {
+          "when": "LEFT",
+          "choices": [
+            {
+              "to": "climb_ceiling_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "climb_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "descend_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "climb_ceiling_right",
+      "type": "CEILING",
+      "subtype": "HANG",
+      "level": 1,
+      "loop": "LOOP",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 22,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 53,
+          "dx": 1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 20,
+          "dx": 1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 21,
+          "dx": 1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 54,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 55,
+          "dx": 2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 56,
+          "dx": 2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 57,
+          "dx": 2,
+          "durationTicks": 10
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "climb_ceiling_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "climb_ceiling_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      },
+      "borderTransitions": [
+        {
+          "when": "RIGHT",
+          "choices": [
+            {
+              "to": "climb_ceiling_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "descend_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "descend_left",
+      "type": "WALL",
+      "subtype": "DESCEND",
+      "level": 3,
+      "loop": "LOOP",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 45,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 46,
+          "dy": 2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 47,
+          "dy": 2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 48,
+          "dy": 2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 49,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 50,
+          "dy": 1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 51,
+          "dy": 1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 52,
+          "dy": 1,
+          "durationTicks": 10
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "climb_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "descend_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      },
+      "borderTransitions": [
+        {
+          "when": "BOTTOM",
+          "choices": [
+            {
+              "to": "climb_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "stand_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "stand_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "walk_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "walk_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_look_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_look_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sprawl_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sprawl_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "wink_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "wink_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "tripping_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "tripping_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "creep_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "creep_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "descend_right",
+      "type": "WALL",
+      "subtype": "DESCEND",
+      "level": 3,
+      "loop": "LOOP",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 45,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 46,
+          "dy": 2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 47,
+          "dy": 2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 48,
+          "dy": 2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 49,
+          "durationTicks": 40
+        },
+        {
+          "sprite": 50,
+          "dy": 1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 51,
+          "dy": 1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 52,
+          "dy": 1,
+          "durationTicks": 10
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "climb_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "descend_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      },
+      "borderTransitions": [
+        {
+          "when": "BOTTOM",
+          "choices": [
+            {
+              "to": "climb_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "stand_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "stand_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "walk_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "walk_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_look_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_look_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sprawl_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sprawl_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "wink_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "wink_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "tripping_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "tripping_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "creep_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "creep_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "drag",
+      "type": "USER",
+      "subtype": "DRAG",
+      "level": 1,
+      "loop": "LOOP",
+      "direction": "ANY",
+      "frames": [
+        {
+          "sprite": 6,
+          "durationTicks": 20
+        },
+        {
+          "sprite": 4,
+          "durationTicks": 20
+        },
+        {
+          "sprite": 5,
+          "durationTicks": 20
+        },
+        {
+          "sprite": 7,
+          "durationTicks": 20
+        },
+        {
+          "sprite": 58,
+          "durationTicks": 20
+        },
+        {
+          "sprite": 59,
+          "durationTicks": 20
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "drag",
+            "weight": 1
+          }
+        ]
+      },
+      "eventTransitions": [
+        {
+          "event": "DRAG_END",
+          "from": "drag",
+          "when": "LEFT",
+          "choices": [
+            {
+              "to": "climb_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "descend_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        },
+        {
+          "event": "DRAG_END",
+          "from": "drag",
+          "when": "RIGHT",
+          "choices": [
+            {
+              "to": "climb_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "descend_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        },
+        {
+          "event": "DRAG_END",
+          "from": "drag",
+          "when": "TOP",
+          "facing": "LEFT",
+          "choices": [
+            {
+              "to": "climb_ceiling_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        },
+        {
+          "event": "DRAG_END",
+          "from": "drag",
+          "when": "TOP",
+          "facing": "RIGHT",
+          "choices": [
+            {
+              "to": "climb_ceiling_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        },
+        {
+          "event": "DRAG_END",
+          "from": "drag",
+          "choices": [
+            {
+              "to": "fall",
+              "weight": 1,
+              "setFacing": "RANDOM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fling",
+      "type": "USER",
+      "subtype": "FLING",
+      "level": 2,
+      "loop": "LOOP",
+      "direction": "ANY",
+      "frames": [
+        {
+          "sprite": 60,
+          "durationTicks": 250
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "fling",
+            "weight": 1
+          }
+        ]
+      },
+      "eventTransitions": [
+        {
+          "event": "FLING_END",
+          "from": "fling",
+          "when": "LEFT",
+          "choices": [
+            {
+              "to": "climb_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "descend_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        },
+        {
+          "event": "FLING_END",
+          "from": "fling",
+          "when": "RIGHT",
+          "choices": [
+            {
+              "to": "climb_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "descend_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        },
+        {
+          "event": "FLING_END",
+          "from": "fling",
+          "when": "TOP",
+          "facing": "LEFT",
+          "choices": [
+            {
+              "to": "climb_ceiling_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        },
+        {
+          "event": "FLING_END",
+          "from": "fling",
+          "when": "TOP",
+          "facing": "RIGHT",
+          "choices": [
+            {
+              "to": "climb_ceiling_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        },
+        {
+          "event": "FLING_END",
+          "from": "fling",
+          "when": "BOTTOM",
+          "facing": "LEFT",
+          "choices": [
+            {
+              "to": "bounce_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        },
+        {
+          "event": "FLING_END",
+          "from": "fling",
+          "when": "BOTTOM",
+          "facing": "RIGHT",
+          "choices": [
+            {
+              "to": "bounce_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        },
+        {
+          "event": "FLING_END",
+          "from": "fling",
+          "choices": [
+            {
+              "to": "fall",
+              "weight": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "jump_left",
+      "type": "AIR",
+      "subtype": "JUMP",
+      "level": 2,
+      "loop": "LOOP",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 19,
+          "dx": -20,
+          "durationTicks": 50
+        }
+      ],
+      "borderTransitions": [
+        {
+          "when": "LEFT",
+          "choices": [
+            {
+              "to": "fall",
+              "weight": 1
+            },
+            {
+              "to": "jump_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "jump_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "jump_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "climb_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "descend_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "fall",
+            "weight": 1
+          },
+          {
+            "to": "jump_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "jump_right",
+      "type": "AIR",
+      "subtype": "JUMP",
+      "level": 2,
+      "loop": "LOOP",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 19,
+          "dx": 20,
+          "durationTicks": 2
+        }
+      ],
+      "borderTransitions": [
+        {
+          "when": "RIGHT",
+          "choices": [
+            {
+              "to": "fall",
+              "weight": 1
+            },
+            {
+              "to": "jump_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "descend_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "fall",
+            "weight": 1
+          },
+          {
+            "to": "jump_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "jump_up_left",
+      "type": "AIR",
+      "subtype": "JUMP_UP",
+      "level": 2,
+      "loop": "LOOP",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 61,
+          "dx": -10,
+          "dy": -8,
+          "durationTicks": 2
+        }
+      ],
+      "borderTransitions": [
+        {
+          "when": "LEFT",
+          "choices": [
+            {
+              "to": "fall",
+              "weight": 1
+            },
+            {
+              "to": "jump_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "jump_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "jump_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "climb_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "descend_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        },
+        {
+          "when": "TOP",
+          "choices": [
+            {
+              "to": "fall",
+              "weight": 1
+            },
+            {
+              "to": "jump_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "jump_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "climb_ceiling_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_ceiling_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "fall",
+            "weight": 1
+          },
+          {
+            "to": "jump_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "jump_up_right",
+      "type": "AIR",
+      "subtype": "JUMP_UP",
+      "level": 2,
+      "loop": "LOOP",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 61,
+          "dx": 10,
+          "dy": -8,
+          "durationTicks": 2
+        }
+      ],
+      "borderTransitions": [
+        {
+          "when": "RIGHT",
+          "choices": [
+            {
+              "to": "fall",
+              "weight": 1
+            },
+            {
+              "to": "jump_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "descend_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        },
+        {
+          "when": "TOP",
+          "choices": [
+            {
+              "to": "fall",
+              "weight": 1
+            },
+            {
+              "to": "jump_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "jump_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "climb_ceiling_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_ceiling_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "fall",
+            "weight": 1
+          },
+          {
+            "to": "jump_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "jump_down_left",
+      "type": "AIR",
+      "subtype": "JUMP_DOWN",
+      "level": 2,
+      "loop": "LOOP",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 62,
+          "dx": -10,
+          "dy": 8,
+          "durationTicks": 2
+        }
+      ],
+      "borderTransitions": [
+        {
+          "when": "LEFT",
+          "choices": [
+            {
+              "to": "fall",
+              "weight": 1
+            },
+            {
+              "to": "jump_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "jump_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "jump_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "climb_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "descend_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        },
+        {
+          "when": "BOTTOM",
+          "choices": [
+            {
+              "to": "jump_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "jump_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "stand_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "stand_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "walk_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "walk_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_look_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_look_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sprawl_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sprawl_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "wink_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "wink_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "tripping_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "tripping_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "creep_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "creep_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "fall",
+            "weight": 1
+          },
+          {
+            "to": "jump_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "jump_down_right",
+      "type": "AIR",
+      "subtype": "JUMP_DOWN",
+      "level": 2,
+      "loop": "LOOP",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 62,
+          "dx": 10,
+          "dy": 8,
+          "durationTicks": 2
+        }
+      ],
+      "borderTransitions": [
+        {
+          "when": "RIGHT",
+          "choices": [
+            {
+              "to": "fall",
+              "weight": 1
+            },
+            {
+              "to": "jump_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "descend_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        },
+        {
+          "when": "BOTTOM",
+          "choices": [
+            {
+              "to": "jump_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "jump_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "jump_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "stand_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "stand_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "walk_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "walk_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_look_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_look_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sprawl_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sprawl_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "wink_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "wink_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "tripping_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "tripping_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "creep_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "creep_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "fall",
+            "weight": 1
+          },
+          {
+            "to": "jump_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "jump_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "jump_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "sit_left",
+      "type": "GROUND",
+      "subtype": "SIT",
+      "level": 3,
+      "loop": "ONESHOT",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 8,
+          "durationTicks": 1250
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "sit_right",
+      "type": "GROUND",
+      "subtype": "SIT",
+      "level": 3,
+      "loop": "ONESHOT",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 8,
+          "durationTicks": 1250
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "sit_dangle_left",
+      "type": "GROUND",
+      "subtype": "IDLE_DANGLE_LEGS",
+      "level": 4,
+      "loop": "LOOP",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 29,
+          "durationTicks": 12
+        },
+        {
+          "sprite": 25,
+          "durationTicks": 35
+        },
+        {
+          "sprite": 30,
+          "durationTicks": 12
+        },
+        {
+          "sprite": 26,
+          "durationTicks": 35
+        }
+      ]
+    },
+    {
+      "key": "sit_dangle_right",
+      "type": "GROUND",
+      "subtype": "IDLE_DANGLE_LEGS",
+      "level": 4,
+      "loop": "LOOP",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 29,
+          "durationTicks": 12
+        },
+        {
+          "sprite": 25,
+          "durationTicks": 35
+        },
+        {
+          "sprite": 30,
+          "durationTicks": 12
+        },
+        {
+          "sprite": 26,
+          "durationTicks": 35
+        }
+      ]
+    },
+    {
+      "key": "sit_look_up_left",
+      "type": "GROUND",
+      "subtype": "SIT_LOOK_UP",
+      "level": 3,
+      "loop": "ONESHOT",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 23,
+          "durationTicks": 600
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "sit_look_up_right",
+      "type": "GROUND",
+      "subtype": "SIT_LOOK_UP",
+      "level": 3,
+      "loop": "ONESHOT",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 23,
+          "durationTicks": 600
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "sit_down_left",
+      "type": "GROUND",
+      "subtype": "SIT_DOWN",
+      "level": 3,
+      "loop": "ONESHOT",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 24,
+          "durationTicks": 1250
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "sit_down_right",
+      "type": "GROUND",
+      "subtype": "SIT_DOWN",
+      "level": 3,
+      "loop": "ONESHOT",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 24,
+          "durationTicks": 1250
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "sprawl_left",
+      "type": "GROUND",
+      "subtype": "STRETCH",
+      "level": 3,
+      "loop": "ONESHOT",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 34,
+          "durationTicks": 1250
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "sprawl_right",
+      "type": "GROUND",
+      "subtype": "STRETCH",
+      "level": 3,
+      "loop": "ONESHOT",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 34,
+          "durationTicks": 1250
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "wink_left",
+      "type": "GROUND",
+      "subtype": "WINK",
+      "level": 4,
+      "loop": "ONESHOT",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 12,
+          "durationTicks": 12
+        },
+        {
+          "sprite": 13,
+          "durationTicks": 12
+        },
+        {
+          "sprite": 14,
+          "durationTicks": 12
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "wink_right",
+      "type": "GROUND",
+      "subtype": "WINK",
+      "level": 4,
+      "loop": "ONESHOT",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 12,
+          "durationTicks": 12
+        },
+        {
+          "sprite": 13,
+          "durationTicks": 12
+        },
+        {
+          "sprite": 14,
+          "durationTicks": 12
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tripping_left",
+      "type": "GROUND",
+      "subtype": "TRIP",
+      "level": 4,
+      "loop": "ONESHOT",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 35,
+          "dx": -8,
+          "durationTicks": 20
+        },
+        {
+          "sprite": 36,
+          "dx": -4,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 37,
+          "dx": -2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 38,
+          "durationTicks": 25
+        },
+        {
+          "sprite": 39,
+          "dx": -4,
+          "durationTicks": 10
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      },
+      "borderTransitions": [
+        {
+          "when": "LEFT",
+          "choices": [
+            {
+              "to": "stand_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "stand_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "walk_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_look_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_look_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sprawl_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sprawl_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "wink_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "wink_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "tripping_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "creep_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "climb_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "descend_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "tripping_right",
+      "type": "GROUND",
+      "subtype": "TRIP",
+      "level": 4,
+      "loop": "ONESHOT",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 35,
+          "dx": 8,
+          "durationTicks": 20
+        },
+        {
+          "sprite": 36,
+          "dx": 4,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 37,
+          "dx": 2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 38,
+          "durationTicks": 25
+        },
+        {
+          "sprite": 39,
+          "dx": 4,
+          "durationTicks": 10
+        }
+      ],
+      "auto": {
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      },
+      "borderTransitions": [
+        {
+          "when": "RIGHT",
+          "choices": [
+            {
+              "to": "stand_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "stand_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "walk_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_look_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_look_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sprawl_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sprawl_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "wink_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "wink_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "tripping_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "creep_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "descend_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "creep_left",
+      "type": "GROUND",
+      "subtype": "CREEP",
+      "level": 4,
+      "loop": "LOOP",
+      "direction": "LEFT",
+      "frames": [
+        {
+          "sprite": 17,
+          "durationTicks": 70
+        },
+        {
+          "sprite": 31,
+          "dx": -2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 18,
+          "dx": -2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 32,
+          "dx": -1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 33,
+          "durationTicks": 60
+        }
+      ],
+      "borderTransitions": [
+        {
+          "when": "LEFT",
+          "choices": [
+            {
+              "to": "stand_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "stand_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "walk_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_look_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_look_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sprawl_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sprawl_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "wink_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "wink_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "tripping_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "creep_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "climb_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "descend_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            }
+          ]
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          }
+        ]
+      }
+    },
+    {
+      "key": "creep_right",
+      "type": "GROUND",
+      "subtype": "CREEP",
+      "level": 4,
+      "loop": "LOOP",
+      "direction": "RIGHT",
+      "frames": [
+        {
+          "sprite": 17,
+          "durationTicks": 70
+        },
+        {
+          "sprite": 31,
+          "dx": 2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 18,
+          "dx": 2,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 32,
+          "dx": 1,
+          "durationTicks": 10
+        },
+        {
+          "sprite": 33,
+          "durationTicks": 60
+        }
+      ],
+      "borderTransitions": [
+        {
+          "when": "RIGHT",
+          "choices": [
+            {
+              "to": "stand_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "stand_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "walk_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_look_up_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_look_up_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sit_down_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sit_down_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "sprawl_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "sprawl_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "wink_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "wink_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "tripping_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "creep_left",
+              "weight": 1,
+              "setFacing": "LEFT"
+            },
+            {
+              "to": "climb_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            },
+            {
+              "to": "descend_right",
+              "weight": 1,
+              "setFacing": "RIGHT"
+            }
+          ]
+        }
+      ],
+      "auto": {
+        "maxDurationTicks": {
+          "minTicks": 240,
+          "maxTicks": 480
+        },
+        "onFinish": [
+          {
+            "to": "stand_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "stand_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "walk_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "walk_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_look_up_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_look_up_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sit_down_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sit_down_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "sprawl_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "sprawl_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "wink_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "wink_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "tripping_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "tripping_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          },
+          {
+            "to": "creep_left",
+            "weight": 1,
+            "setFacing": "LEFT"
+          },
+          {
+            "to": "creep_right",
+            "weight": 1,
+            "setFacing": "RIGHT"
+          }
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "event": "DRAG_START",
+      "from": "*",
+      "choices": [
+        {
+          "to": "drag",
+          "weight": 1,
+          "setFacing": "RANDOM"
+        }
+      ]
+    },
+    {
+      "event": "FLING_START",
+      "from": "*",
+      "choices": [
+        {
+          "to": "fling",
+          "weight": 1,
+          "setFacing": "EVENT_VELOCITY"
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "stand_left",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "stand_right",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "walk_left",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "walk_right",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "sit_left",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "sit_right",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "sit_look_up_left",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "sit_look_up_right",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "sit_down_left",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "sit_down_right",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "sprawl_left",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "sprawl_right",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "wink_left",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "wink_right",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "tripping_left",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "tripping_right",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "creep_left",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "creep_right",
+      "choices": [
+        {
+          "to": "sit_dangle_left",
+          "weight": 1
+        },
+        {
+          "to": "sit_dangle_right",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "sit_dangle_left",
+      "choices": [
+        {
+          "to": "walk_left",
+          "weight": 1,
+          "setFacing": "LEFT"
+        },
+        {
+          "to": "walk_right",
+          "weight": 1,
+          "setFacing": "RIGHT"
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "from": "sit_dangle_right",
+      "choices": [
+        {
+          "to": "walk_left",
+          "weight": 1,
+          "setFacing": "LEFT"
+        },
+        {
+          "to": "walk_right",
+          "weight": 1,
+          "setFacing": "RIGHT"
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "minLevel": 1,
+      "allowedTypes": [
+        "WALL"
+      ],
+      "choices": [
+        {
+          "to": "fall",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "event": "TAP",
+      "minLevel": 1,
+      "allowedTypes": [
+        "CEILING"
+      ],
+      "choices": [
+        {
+          "to": "fall",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

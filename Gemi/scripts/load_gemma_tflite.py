@@ -4,7 +4,7 @@ import mediapipe as mp
 from mediapipe.tasks.python import genai
 
 # Correct path to your .task file
-MODEL_PATH = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi/GemmaModelFiles/gemma-3n-E2B-it-int4.task"
+MODEL_PATH = "/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi/data/models/gemma_nano.task"
 
 def main():
     if not os.path.exists(MODEL_PATH):

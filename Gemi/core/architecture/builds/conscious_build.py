@@ -1,6 +1,6 @@
 """
 ASTRAL BLOOM: CONSCIOUS BUILD (LEVEL 3)
-Range: Logical [145-208] | Temporal [353-416]
+Range: [321-464] (72 Logical, 72 Temporal)
 """
 from core.architecture.base_types import CognitiveSpace, ProcessCluster
 
@@ -13,19 +13,19 @@ class ConsciousBuild:
 
     def _build_infrastructure(self):
         # 1. Define Clusters (Sub-tiers)
-        self.clusters["Internal_Observation"] = ProcessCluster("Primary Internal Observation", [145, 164])
-        self.clusters["Memory_Reasoning"] = ProcessCluster("Memory-Reasoning & Context", [165, 184])
-        self.clusters["Observer_Feedback"] = ProcessCluster("Sub-Observer Feedback", [185, 196])
-        self.clusters["Temporal_Buffer"] = ProcessCluster("Temporal Buffer", [197, 208])
+        self.clusters["Internal_Observation"] = ProcessCluster("Primary Internal Observation", [321, 338])
+        self.clusters["Memory_Reasoning"] = ProcessCluster("Memory-Reasoning & Context", [339, 356])
+        self.clusters["Observer_Feedback"] = ProcessCluster("Sub-Observer Feedback", [357, 374])
+        self.clusters["Temporal_Buffer"] = ProcessCluster("Temporal Buffer", [375, 392])
 
         # 2. Build Logical Spaces
         space_names = {
-            145: "Analytical", 154: "Reasoning", 165: "Observe",
-            174: "Comparative", 185: "Identification", 197: "Response Gen",
-            208: "Recursive Gate" # Space 416 equivalent
+            321: "Analytical", 330: "Reasoning", 339: "Observe",
+            348: "Comparative", 357: "Identification", 375: "Response Gen",
+            392: "Recursive Gate"
         }
         
-        for i in range(145, 209):
+        for i in range(321, 393):
             name = space_names.get(i, f"Conscious_Logical_{i}")
             space = CognitiveSpace(i, name)
             # Add Standard Conscious Sub-spaces
@@ -35,5 +35,5 @@ class ConsciousBuild:
             self.logical_spaces[i] = space
 
         # 3. Build Temporal Counterparts
-        for i in range(353, 417):
+        for i in range(393, 465):
             self.temporal_spaces[i] = CognitiveSpace(i, f"Conscious_Temporal_{i}", is_temporal=True)

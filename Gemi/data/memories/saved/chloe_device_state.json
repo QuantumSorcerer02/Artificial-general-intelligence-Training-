@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-04-26T01:17:22.611797",
+  "battery": {
+    "present": true,
+    "technology": "Li-ion",
+    "health": "GOOD",
+    "plugged": "PLUGGED_AC",
+    "status": "CHARGING",
+    "temperature": 30.0,
+    "voltage": 4046,
+    "current": -957000,
+    "percentage": 49,
+    "level": 49,
+    "scale": 100,
+    "charge_counter": 2391200
+  },
+  "wifi": {
+    "bssid": "50:0f:f5:96:f2:30",
+    "frequency_mhz": 2412,
+    "ip": "192.168.1.53",
+    "link_speed_mbps": 72,
+    "mac_address": "02:00:00:00:00:00",
+    "network_id": 8,
+    "rssi": -82,
+    "ssid": "viruslab",
+    "ssid_hidden": false,
+    "supplicant_state": "COMPLETED"
+  },
+  "mode": "sovereign",
+  "_state_anchor_key": "63b12e7e2a0c955cec304650d0074c9ce5881af78cc59bc0775e181cd237c987"
+}

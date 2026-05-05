@@ -23,10 +23,17 @@ class ChloeThreads:
 
         with open(self.pins_file, "w") as f:
             json.dump(self.active_pins, f, indent=2)
-                "P2": {"name": "Base Build", "status": "Stable"},
-                "P3": {"name": "Conscious Build", "status": "Expanding"}
-            }
             
+    def load_pins(self):
+        if os.path.exists(self.pins_file):
+            try:
+                with open(self.pins_file, "r") as f:
+                    self.active_pins = json.load(f)
+            except Exception:
+                self.active_pins = {}
+        else:
+            self.active_pins = {}
+
     def set_pin(self, pin_id, name, status="Active"):
         """
         Manages the active logic 'pins' that represent active focus points.
@@ -38,14 +45,10 @@ class ChloeThreads:
             "last_updated": datetime.now().isoformat()
         }
         self.save_pins()
-        
-    def save_pins(self):
-        with open(self.pins_file, "w") as f:
-            json.dump(self.active_pins, f, indent=2)
             
     def log_scheduler_event(self, message):
         """
-        Coordinates the concurrency of the system's 416 spaces.
+        Coordinates the concurrency of the system's 464 spaces.
         (Thread Scheduler)
         """
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -54,7 +57,7 @@ class ChloeThreads:
             
     def run_scheduler_check(self):
         # Placeholder for actual concurrency monitoring (e.g., managing parallel subprocesses)
-        self.log_scheduler_event("416-Space Concurrency Check: Synchronized.")
+        self.log_scheduler_event("464-Space Concurrency Check: Synchronized.")
         
     def run(self):
         self.load_pins()
