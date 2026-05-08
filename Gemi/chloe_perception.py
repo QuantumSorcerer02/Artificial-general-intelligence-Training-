@@ -127,9 +127,40 @@ class ChloePerception:
         except Exception as e:
             print(f"Error saving state: {e}")
             
+    def capture_sensory_sweep(self):
+        """
+        Aggregates multi-modal data (GPS, Notifications, Sensors) for holistic awareness.
+        """
+        sweep = {}
+        try:
+            # 1. Location Awareness
+            loc_raw = subprocess.check_output(["termux-location"], timeout=5).decode()
+            sweep["location"] = json.loads(loc_raw)
+            
+            # 2. Digital Environment (Notifications)
+            notif_raw = subprocess.check_output(["termux-notification-list"], timeout=5).decode()
+            sweep["notifications"] = json.loads(notif_raw)
+            
+            # 3. Physical Orientation (Sensors - Snapshot)
+            # Just taking a quick sample of the first few sensors
+            sensors = ["accelerometer", "light"]
+            sweep["sensors"] = {}
+            for s in sensors:
+                try:
+                    # We use -n 1 for a single reading
+                    val = subprocess.check_output(["termux-sensor", "-n", "1", "-s", s], timeout=2).decode()
+                    sweep["sensors"][s] = json.loads(val)
+                except: pass
+
+            self.sensory_data.update(sweep)
+            return "Sensory sweep successful."
+        except Exception as e:
+            return f"Sensory Error: {e}"
+
     def run(self):
         self.update_context_cluster()
         self.process_sensory_data()
+        self.capture_sensory_sweep()
         self.save_perceptive_state()
 
 if __name__ == "__main__":

@@ -35,7 +35,7 @@ def process_input(text):
         parts = text[9:].split("|")
         summary = parts[0].strip()
         description = parts[1].strip() if len(parts) > 1 else ""
-        subprocess.run(["python3", "chloe_comms.py", "calendar", summary, description])
+        subprocess.Popen(["python3", "chloe_comms.py", "calendar", summary, description], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
     else:
         # Generic response via notification

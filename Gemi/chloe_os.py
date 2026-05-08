@@ -61,8 +61,8 @@ def check_system_health():
     if percentage < 20 and plugged == "UNPLUGGED":
         msg = f"Clint, my power levels are critical at {percentage} percent. Please connect me to a power source."
         log_event("WARNING", msg)
-        # Only speak if not recently spoken (simple debounce logic could be added here)
-        # subprocess.run([TERMUX_TTS, msg]) 
+        # Asynchronous speech to prevent hanging the OS loop
+        subprocess.Popen(["bash", TERMUX_TTS, msg], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     # Connection Status
     ssid = wifi.get("ssid", "Not Connected")

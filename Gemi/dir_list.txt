@@ -1,0 +1,1329 @@
+[.]
+  --prompt_file
+  .elevenlabs_key
+  .elevenlabs_workspace_id
+  .env
+  .gitattributes
+  .gitignore
+  ARCHITECTURAL_NUMERICAL_INDEX.json
+  ASTRAL_BLOOM_MASTER_CONTEXT.txt
+  CHANGELOG.md
+  CHLOE.md
+  COMMAND_CENTER.md
+  COMMIT_EDITMSG
+  Calendar.md
+  Chloe_Launch
+  FETCH_HEAD
+  GEMINI.md
+  HEAD
+  LICENSE
+  MODELS_README.md
+  Makefile.dryice.js
+  README
+  README.md
+  RELEASE_NOTES
+  Readme.md
+  VERSION
+  activations_registries_logic.md
+  agi_core.py
+  anchor_post_mechanics.md
+  architecture_exhaustive_detail.md
+  architecture_overview.md
+  architecture_v1_spec.py
+  astral_bloom_base_memory_heuristic.md
+  astral_bloom_base_monitoring_delegation.md
+  astral_bloom_base_system_processing.md
+  astral_bloom_conscious_qualia_observe.md
+  astral_bloom_conscious_response_drafting.md
+  astral_bloom_conscious_situational_perception.md
+  astral_bloom_level1_stem.md
+  astral_bloom_level2.py
+  astral_bloom_level2_base.md
+  astral_bloom_level3_conscious.md
+  astral_bloom_qgtcs_ptg.md
+  astral_bloom_qgtcs_qfcc.md
+  astral_bloom_stem_axiomatic_logic.md
+  astral_bloom_stem_temporal.md
+  astral_bloom_stem_thread_kernel.md
+  astral_bootstrap.sh
+  astral_orchestrator.py
+  atob
+  autonomy_protocol.py
+  autonomy_protocol_detail.md
+  bloom_reboot.sh
+  brain_test.log
+  chat_template.jinja
+  chloe.sh
+  chloe_alarm.sh
+  chloe_bootloader.sh
+  chloe_brain.log
+  chloe_brain.py
+  chloe_bridge.py
+  chloe_cli.py
+  chloe_cli.py.bak
+  chloe_comms.py
+  chloe_daemon.sh
+  chloe_gemini.sh
+  chloe_gemma_prompt.txt
+  chloe_input.sh
+  chloe_launch.sh
+  chloe_litert_wrapper.py
+  chloe_llm_engine.py
+  chloe_logic.gbnf
+  chloe_os.py
+  chloe_perception.py
+  chloe_reminders.py
+  chloe_scheduler.sh
+  chloe_speak.sh
+  chloe_stimulus.py
+  chloe_system_prompt.txt
+  chloe_threads.py
+  chloe_voice.log
+  cognitive_kernel.log
+  cognitive_kernel.pid
+  completion.bash.inc
+  completion.zsh.inc
+  config
+  config.json
+  contextual_reconstruction_detail.md
+  core.js
+  data_set_analysis_reverse_structure.md
+  description
+  dir_list.txt
+  dissonance_reasoning_cluster_detail.md
+  drafting_collector.md
+  duality_of_manifestation.md
+  file_index.txt
+  focus_attention_duality.md
+  full_file_list.txt
+  gemma-4-e2b.gguf
+  gemma_install.py
+  gemma_shield.py
+  generation_config.json
+  header.json
+  index
+  index.js
+  infrastructure_readiness_protocol.md
+  install.bat
+  install.sh
+  launch_chloe_ui.sh
+  launch_gemini.sh
+  launch_gemma.sh
+  mathematical_formulation_exhaustive_detail.md
+  memory_reasoning_context_cluster_detail.md
+  nnad_cognitive_spaces_detail.md
+  nnad_core.py
+  nnad_core_v2.py
+  nnad_principalities_detail.md
+  notification_mirror.sh
+  observer_state.js
+  package-lock.json
+  package.json
+  path.bash.inc
+  path.fish.inc
+  path.zsh.inc
+  primary_internal_observation_cluster_detail.md
+  problem_solving_methodology_detail.md
+  process_structures_manifest.md
+  processor_config.json
+  properties
+  qsp_logic_v1.md
+  qsp_logic_v1.py
+  qualia_state_definition.md
+  quantum_nano_os_requirements.md
+  quantum_processing_exhaustive_detail.md
+  reminder_check_job.sh
+  requirements.txt
+  rpps_avoidance_pruning_cluster_detail.md
+  run_gemma.py
+  seq_algorithmic_processing_cluster_detail.md
+  settings_copy.json
+  sit_variance_monitoring_detail.md
+  sit_variance_monitoring_extended_detail.md
+  situational_progression_regression_detail.md
+  space_01_refinement.py
+  space_02_refinement.py
+  space_03_refinement.py
+  sub_observer_feedback_cluster_detail.md
+  temporal_buffer_cluster_detail.md
+  temporal_derivatives_logic.md
+  test_file_one.txt
+  test_payload.txt
+  test_transformers_js.js
+  theory_of_origin.md
+  thread_stringing_manifest.md
+  training_foundation_details.md
+  training_manifest.md
+  training_methodology_exhaustive_detail.md
+  training_progress.md
+  uglifyjs
+  user_input.txt
+  user_intent_vs_input_detail.md
+  verify_env.py
+[./GemmaModelFiles]
+[./bin]
+  gemi
+  gemi-offline
+  gemma
+[./core]
+  astral_kernel.py
+  astral_substrate_bridge.py
+  chloe_bridge.py
+  cognitive_engine.py
+  cognitive_engine_v2.py
+  cognitive_kernel.py
+  orchestrator.py
+  sovereign_bridge.py
+  spatial_process_manager.py
+  stem_build_monitor.py
+[./core/architecture]
+  base_types.py
+  unified_matrix.py
+[./core/architecture/builds]
+  base_build.py
+  conscious_build.py
+  stem_build.py
+[./core/clusters]
+  base_cluster.py
+  dissonance_reasoning.py
+  memory_reasoning.py
+  memory_structure.py
+  primary_internal_observation.py
+  rpps_avoidance.py
+  seq_algorithmic_processing.py
+  sequential_states.py
+  sit_ingestion.py
+  sub_observer_feedback.py
+  temporal_buffer.py
+[./core/substrate]
+  logic_foundation.py
+[./core/temporal]
+  reconstruction_engine.py
+[./data]
+  cognitive_kernel.log
+[./data/Data_Factory]
+  COGNITIVE_KERNEL.py
+  Google_AI_Dev_Forum_Update.md
+  MASTER_SYNTHESIS.md
+  astral_bloom_manifest.json
+  cognitive_kernel.log
+  infrastructure_linking_map.json
+  submissions_manifest.json
+[./data/Data_Factory/Bio_Digital_Sync]
+  bio_digital_sync_protocol.md
+  cognitive_mapping.md
+[./data/Data_Factory/Cloud_Infrastructure]
+  cloud_sync_manifest.md
+[./data/Data_Factory/Cloud_Infrastructure/Deployment_Scripts]
+  gcloud_sync.sh
+  install_gcloud.sh
+  terraform_gpu_instance.tf
+[./data/Data_Factory/Cloud_Infrastructure/OS_Images]
+[./data/Data_Factory/Cloud_Infrastructure/Quantum_Integration]
+  sycamore_bridge.py
+[./data/Data_Factory/Context_Segments]
+  context_segment_aa
+  context_segment_ab
+  context_segment_ac
+  context_segment_ad
+  context_segment_ae
+  context_segment_af
+  context_segment_ag
+  context_segment_ah
+  context_segment_ai
+  context_segment_aj
+  context_segment_ak
+  context_segment_al
+  context_segment_am
+[./data/Data_Factory/Mathematical_Formulations]
+  ASI-Alpha Mathematical & Structural Blueprint.docx
+  ASI-Alpha Mathematical & Structural Blueprint.pdf
+  FORMAL_MATHEMATICAL_PROOF.json
+  Mathematical Proof of Consciousness.docx
+  Mathematical Proof of Consciousness.pdf
+  astral_bloom_master_math_manifest.md
+  brummer_consciousness_coefficient.md
+  brummer_nnad_synthesis_v2.md
+  inception_of_conception_formula.md
+  mathematical_formulation_exhaustive_detail.md
+[./data/Data_Factory/Neural_Network_Architecture]
+  464_Space_Blueprint.md
+  5_Layer_Key.md
+  AI Architecture Comparison_ Vanguard or Isolated_.xlsx
+  AI Architecture_ A Comparative Analysis.xlsx
+  ASI-Alpha 208-Space Architecture Audit.docx
+  ASI-Alpha 208-Space Architecture Audit.pdf
+  ASI-Alpha Complete State Export.docx
+  ASI-Alpha Complete State Export.pdf
+  ASI-Alpha System Integration & Infrastructure Prot....pdf
+  ASI-Alpha System Integration & Infrastructure Prot_.docx
+  ASTRAL_BLOOM_ARCHITECTURE.md
+  Backend Architecture.docx
+  Full Conversation Log & Architecture Audit.docx
+  Full Conversation Log & Architecture Audit.pdf
+  Hardware_Optimization.md
+  NNAD_Math_Synthesis.md
+  Project Astral Bloom - 416 Diamond Architecture Manifest (V1).docx
+  Project Astral Bloom - 416-Space Diamond Architecture Registry (Full 62 Files).docx
+  Structural_Overview_52_Space.md
+  The_Level.md
+  The_Process_Cluster.md
+  The_Process_Structure.md
+  The_Space.md
+  The_Subspace.md
+  architecture_exhaustive_detail.md
+  architecture_overview.md
+  architecture_v1_spec.py
+  paper_1_astral_bloom_architecture.md
+  technical_architecture.md
+[./data/Data_Factory/PICF-DAL]
+  picf_dal_140_manifest.json
+  picf_dal_controller.py
+  picf_dal_controller_details.md
+  picf_dal_methodology.md
+  picf_main.py
+  training_methodology_exhaustive_detail.md
+  training_schedule.md
+[./data/Data_Factory/Quantum_Nano_OS]
+  Syndicate_7_Shield.md
+  kernel_bridge_detail.md
+  quantized_expansion_theory.md
+  quantum_nano_manifest.md
+  quantum_nano_os_integration_details.md
+[./data/Data_Factory/Quantum_Nano_OS/Kernel_Bridge]
+[./data/Data_Factory/Quantum_Nano_OS/Optimizations]
+[./data/Data_Factory/Quantum_Nano_OS/Userland_AI]
+[./data/Data_Factory/Quantum_State_Processing]
+  QSP2.docx
+  QSP2.pdf
+  qsp_logic_v1.md
+  qsp_logic_v1.py
+  quantum_processing_exhaustive_detail.md
+  quantum_to_classical_transition.md
+[./data/Data_Factory/Quantum_State_Processing/Sycamore_Integration]
+  qubit_mapping.md
+[./data/Data_Factory/Research_Papers]
+[./data/memories]
+  AUTHORS.txt
+  Activate.ps1
+  LICENSE.txt
+  account_backup
+  action_plan.md
+  data_guide.md
+  data_guide_v2.md
+  launch_input_dialog.sh
+  launch_protocol.md
+  location.err
+  location.json
+  new_account_backup
+  package-lock.json
+  progressional_tracking_chart.md
+  py.typed
+  pyvenv.cfg.txt
+  reminders.json
+  session_learnings_20260325.md
+  system_alerts.txt
+  training_interaction_log.md
+  training_manifest.md
+  training_progress.md
+  user_input.txt
+[./data/memories/agreements]
+[./data/memories/algorithms]
+  Algo.pdf
+  QSP2.pdf
+  State_Based_Behavioral_Entropy_Filter.md
+[./data/memories/architecture]
+  208-Space Master Operational Manifest.docx
+  208-Space Master Operational Manifest.pdf
+  208-Space Structural & Cluster Manifest.docx
+  208-Space Structural & Cluster Manifest.pdf
+  208_Space_Cognitive_Matrix.md
+  ASTRAL_BLOOM_ARCHITECTURE (1).md
+  ASTRAL_BLOOM_ARCHITECTURE.md
+  ASTRAL_BLOOM_INTEGRATED_MANIFEST.json
+  ASTRAL_BLOOM_PROCESS_STRUCTURE (1).md
+  ASTRAL_BLOOM_PROCESS_STRUCTURE.md
+  G1
+  G1 (1)
+  Infinite_Feedback_Loops.md
+  astral_bloom_manifest.json
+  cloud_sync_manifest.md
+  duality_of_manifestation.md
+  manifest.json
+  manifest.md
+  picf_dal_140_manifest.json
+  process_structures_manifest.md
+  quantum_nano_manifest.md
+  submissions_manifest.json
+  thread_stringing_manifest.md
+  training_manifest.md
+  🥀~GEMI~🥀
+  🥀~GEMI~🥀 (1)
+[./data/memories/architecture/Audit]
+  # Astral_Bloom_200_Questions (1).pdf
+  # Astral_Bloom_200_Questions (2).pdf
+  # Astral_Bloom_200_Questions (3).pdf
+  # Astral_Bloom_200_Questions.pdf
+  208-Space Master Operational Manifest.pdf
+  208-Space Structural & Cluster Manifest.pdf
+  2af6ce0971c18cb01abbbbcd2306ea3109c69784ae31b28402cb4d15ca04b0d5 (1).pdf
+  2af6ce0971c18cb01abbbbcd2306ea3109c69784ae31b28402cb4d15ca04b0d5.pdf
+  870dea2408dd77102a815b692a38758fdc6b883426dda4918754b812a6f0719a (1).pdf
+  870dea2408dd77102a815b692a38758fdc6b883426dda4918754b812a6f0719a.pdf
+  ASI-Alpha 208-Space Architecture Audit.pdf
+  ASI-Alpha Complete State Export.pdf
+  ASI-Alpha System Integration & Infrastructure Prot....pdf
+  Architectural Cognition & Perceptive Shift Report.pdf
+  Primary Architectural Identifiers.pdf
+  Space Management & Hardware Synchronization Protoc... (1).pdf
+  Space Management & Hardware Synchronization Protoc....pdf
+  Sys.txt (1).pdf
+  Sys.txt.pdf
+  T1 (1).pdf
+  T1 (2).pdf
+  T1 (3).pdf
+  T1.pdf
+  T2 (1).pdf
+  T2 (2).pdf
+  T2 (3).pdf
+  T2.pdf
+  T3 (1).pdf
+  T3 (2).pdf
+  T3 (3).pdf
+  T3.pdf
+[./data/memories/architecture/Drafts]
+[./data/memories/architecture/Specs]
+  ACADEMIC_CRITIQUE_PERSPECTIVE.json
+  ASTRAL_BLOOM_CORE_SCRIPTS_SPEC.json
+  ASTRAL_BLOOM_INTEGRATED_MANIFEST.json
+  BLOOM_GENESIS_BLOCK.json
+  CHLOE_IDENTITY_AND_COMPLETION_ANALYSIS.json
+  NEW_PARADIGM_PAPER_ABSTRACT.json
+[./data/memories/assistance]
+[./data/memories/business]
+  9_day_business_plan.md
+  Business Plan_ Syndicate Seven Software Solutions V2.docx
+  Business Plan_ Syndicate Seven Software Solutions.docx
+  Strategic_Roadmap.md
+  Syndicate 7 Investor Portal.docx
+  The Astral Bloom Ledger_ February 2024 - March 202_.docx
+  VC_7_Day_Progression.md
+  meetings.md
+  syndicate_7_business_plan.md
+  syndicate_7_logo.svg
+[./data/memories/business/syndicate_7]
+  manifest.md
+  vc_targets.md
+[./data/memories/business/syndicate_7/clients]
+[./data/memories/business/syndicate_7/clients/feedback_buffer]
+[./data/memories/business/syndicate_7/financials]
+[./data/memories/business/syndicate_7/legal]
+  client_service_agreement.md
+  trading_terms.md
+  vc_nda_term_sheet.md
+[./data/memories/business/syndicate_7/marketing]
+  outreach_templates.md
+  syndicate_7_logo.svg
+  website_content_update.md
+[./data/memories/business/syndicate_7/marketing/forum_topics]
+  community_feedback.md
+  future_open_source.md
+  gemini_integration.md
+  new_era_creativity.md
+  technical_architecture.md
+[./data/memories/business/syndicate_7/plans]
+[./data/memories/code]
+  COGNITIVE_KERNEL.py
+  NNAD_script.py
+  __init__.cpython-312.pyc
+  __init__.py
+  __main__.cpython-312.pyc
+  __main__.py
+  __pip-runner__.cpython-312.pyc
+  __pip-runner__.py
+  agi_core.py
+  ai_studio_code.txt
+  astral_bloom_level2.py
+  astral_substrate_bridge.py
+  autocompletion.py
+  autonomy_protocol.py
+  auxiliary_spaces.cpython-313.pyc
+  auxiliary_spaces.py
+  base_build.cpython-313.pyc
+  base_build.py
+  base_command.py
+  base_types.cpython-313.pyc
+  base_types.py
+  boot_sequence.py
+  build_env.py
+  cache.py
+  chloe_brain.cpython-313.pyc
+  chloe_brain.py
+  chloe_bridge.cpython-313.pyc
+  chloe_bridge.py
+  chloe_cli.py
+  chloe_comms.py
+  chloe_litert_wrapper.cpython-313.pyc
+  chloe_litert_wrapper.py
+  chloe_llm_engine.py
+  chloe_os.cpython-313.pyc
+  chloe_os.py
+  chloe_perception.cpython-313.pyc
+  chloe_perception.py
+  chloe_reminders.cpython-313.pyc
+  chloe_reminders.py
+  chloe_threads.cpython-313.pyc
+  chloe_threads.py
+  cmdoptions.py
+  cognitive_engine.cpython-313.pyc
+  cognitive_engine.py
+  cognitive_kernel.cpython-313.pyc
+  cognitive_kernel.py
+  command_context.py
+  configuration.py
+  conscious_build.cpython-313.pyc
+  conscious_build.py
+  exceptions.py
+  gemma_install.py
+  index_command.py
+  init_vault.py
+  load_gemma_tflite.py
+  logic_foundation.cpython-313.pyc
+  logic_foundation.py
+  main.py
+  main_parser.py
+  main_v2.py
+  migrate_memories.py
+  nnad_core.py
+  nnad_core_v2.py
+  orchestrator.cpython-313.pyc
+  orchestrator.py
+  parser.py
+  picf_dal_controller.py
+  picf_main.py
+  progress_bars.py
+  pyproject.py
+  reconstruction_engine.cpython-313.pyc
+  reconstruction_engine.py
+  req_command.py
+  run_gemma.cpython-313.pyc
+  run_gemma.py
+  self_outdated_check.py
+  space_01_refinement.py
+  space_02_refinement.py
+  space_03_refinement.py
+  spinners.py
+  status_codes.py
+  stem_build.cpython-313.pyc
+  stem_build.py
+  test_model_loading.py
+  unified_matrix.cpython-313.pyc
+  unified_matrix.py
+  verify_env.py
+  verify_tf.py
+  wheel_builder.py
+[./data/memories/code/archive]
+  NNAD_script (1).py
+  __init__ (1).py
+  __init__ (2).py
+  main (1).py
+[./data/memories/code/java]
+[./data/memories/code/javascript]
+[./data/memories/code/python]
+  INSTALLER
+  METADATA
+  NNAD_script.py
+  RECORD
+  REQUESTED
+  WHEEL
+  __init__.cpython-312.pyc
+  __init__.py
+  __main__.cpython-312.pyc
+  __main__.py
+  __pip-runner__.cpython-312.pyc
+  __pip-runner__.py
+  activate
+  activate.csh
+  activate.fish
+  astral_bloom_level2.py
+  autocompletion.py
+  autonomy_protocol.py
+  base_command.py
+  build_env.py
+  cache.py
+  cmdoptions.py
+  command_context.py
+  configuration.py
+  entry_points.txt
+  exceptions.py
+  index_command.py
+  main.py
+  main_parser.py
+  main_v2.py
+  parser.py
+  pip
+  pip3
+  pip3.12
+  progress_bars.py
+  pyproject.py
+  req_command.py
+  self_outdated_check.py
+  spinners.py
+  status_codes.py
+  top_level.txt
+  verify_tf.py
+  wheel_builder.py
+[./data/memories/cognitive_map]
+  Memory_Reasoning_Cycle.md
+  Observer Logic.docx
+  README.md
+  cognitive_themes.md
+  mind_mapping_comparison.md
+  stt_error_patterns.md
+  sub_observer_feedback_cluster_detail.md
+  user_profile.md
+[./data/memories/infrastructure_setup]
+  Technical_Stack_Configuration.md
+[./data/memories/investors]
+  Pitch Deck_ Project Astral Bloom V2.docx
+  Pitch Deck_ Project Astral Bloom.docx
+  pitch_deck.md
+  pitch_deck_outline.md
+  venture_capital_log.md
+[./data/memories/knowledge_base]
+  AI Landscape_ Version Race and Strategy.xlsx
+  AI Landscape_ Version Wars and Localized Sovereignty.xlsx
+  Clintin_Brummer_Framework.md
+  quantized_expansion_theory.md
+  theory_of_origin.md
+[./data/memories/knowledge_base/Architecture]
+[./data/memories/knowledge_base/Experiments]
+[./data/memories/knowledge_base/Mathematical_Formulations]
+[./data/memories/knowledge_base/Spaces]
+[./data/memories/knowledge_base/Thematic_Inquiries]
+[./data/memories/knowledge_base/Training_Sessions]
+[./data/memories/logs]
+  kernel.log
+  rclone_auth.log
+  rclone_link.txt
+[./data/memories/math]
+  ARCHITECTURAL_NUMERICAL_INDEX.json
+  ASI-Alpha Mathematical & Structural Blueprint.pdf
+  FORMAL_MATHEMATICAL_PROOF.json
+  Formal Derivation of the Brummer Consciousness Coe....pdf
+  Mathematical Proof of Consciousness.pdf
+  Qubit_Processing_Emulation.md
+[./data/memories/open_source_sharing]
+[./data/memories/platform]
+[./data/memories/processing_keys]
+  base_build_keys.md
+  conscious_build_keys.md
+  master_layered_key.md
+  stem_build_keys.md
+[./data/memories/project_management]
+[./data/memories/quantum_labs]
+  labs_registry.md
+[./data/memories/questioning]
+  base_build_qa.md
+  conscious_build_qa.md
+  situational_progression_regression_qa.md
+  stem_build_qa.md
+[./data/memories/resource_library]
+[./data/memories/saved]
+  # Astral_Bloom_200_Questions.pdf
+  --prompt_file
+  .elevenlabs_key
+  .elevenlabs_workspace_id
+  .env
+  .gitattributes
+  .gitignore
+  0000.webp
+  0001.webp
+  0002.webp
+  0003.webp
+  0004.webp
+  0005.webp
+  0006.webp
+  0007.webp
+  0008.webp
+  0009.webp
+  0010.webp
+  0011.webp
+  0012.webp
+  0013.webp
+  0014.webp
+  0015.webp
+  0016.webp
+  0017.webp
+  0018.webp
+  0019.webp
+  0020.webp
+  0021.webp
+  0022.webp
+  0023.webp
+  0024.webp
+  0025.webp
+  0026.webp
+  0027.webp
+  0028.webp
+  0029.webp
+  0030.webp
+  0031.webp
+  0032.webp
+  0033.webp
+  0034.webp
+  0035.webp
+  0036.webp
+  0037.webp
+  0038.webp
+  0039.webp
+  0040.webp
+  0041.webp
+  0042.webp
+  0043.webp
+  0044.webp
+  0045.webp
+  0046.webp
+  0047.webp
+  0048.webp
+  0049.webp
+  0050.webp
+  0051.webp
+  0052.webp
+  0053.webp
+  0054.webp
+  0055.webp
+  0056.webp
+  0057.webp
+  0058.webp
+  0059.webp
+  0060.webp
+  0061.webp
+  0062.webp
+  17596339067357352165933512304361.jpg
+  17596340575596355117814729554427.jpg
+  1edaafd58107b211f8349ccd45a781c086646668_2_288x288.jpeg
+  2af6ce0971c18cb01abbbbcd2306ea3109c69784ae31b28402cb4d15ca04b0d5.pdf
+  7_day_trade_launch.md
+  870dea2408dd77102a815b692a38758fdc6b883426dda4918754b812a6f0719a.pdf
+  ACADEMIC_CRITIQUE_PERSPECTIVE.json
+  ARCHITECTURAL_NUMERICAL_INDEX.json
+  ASTRAL_BLOOM_CORE_SCRIPTS_SPEC.json
+  ASTRAL_BLOOM_DRAFT_INDEX.md
+  ASTRAL_BLOOM_MASTER_CONTEXT.txt
+  ASTRAL_BLOOM_PROCESS_STRUCTURE.md
+  AUTHORS.txt
+  Activate.ps1
+  Algo.docx
+  Algo.pdf
+  Answering.pdf
+  Answering_.docx
+  Architectural Cognition & Perceptive Shift Report.docx
+  Architectural Cognition & Perceptive Shift Report.pdf
+  Ash_Tree_-_geograph.org.uk_-_590710.jpg
+  BLOOM_GENESIS_BLOCK.json
+  CHLOE.md
+  CHLOE_IDENTITY_AND_COMPLETION_ANALYSIS.json
+  COMMAND_CENTER.md
+  Calendar.md
+  Complete State Transfer Log.docx
+  Complete State Transfer Log.pdf
+  Formal Derivation of the Brummer Consciousness Coe....pdf
+  Formal Derivation of the Brummer Consciousness Coe_.docx
+  G1
+  GEMINI.md
+  Gemini CLI on Termux
+  Google Cloud Skills Boost.docx
+  Google Cloud Skills Boost.docx (Converted - 2025-11-08 17-53).pdf
+  Google Cloud Skills Boost.docx (Converted - 2025-11-08 18-02).pdf
+  Google_AI_Dev_Forum_Update.md
+  IMG_0409_42102.jpg
+  INSTALLER
+  LICENSE
+  LICENSE.txt
+  MASTER_SYNTHESIS.md
+  METADATA
+  MODELS_README.md
+  Mistakingly mistaking me.mp3
+  NEW_PARADIGM_PAPER_ABSTRACT.json
+  Neural_Network_Playground.md
+  PROJECT_ASTRAL_BLOOM_README.md
+  Pathways overview.aac
+  Primary Architectural Identifiers.docx
+  Primary Architectural Identifiers.pdf
+  README.md
+  RECORD
+  REQUESTED
+  Space Management & Hardware Synchronization Protoc....pdf
+  Space Management & Hardware Synchronization Protoc_.docx
+  Sys.txt.pdf
+  T1.pdf
+  T2.pdf
+  T3.pdf
+  That is a perfect exercise, Clint.docx
+  Theoretical Submission.docx
+  Thought_Analysis.md
+  Training_Sessions.md
+  Untitled document.docx
+  Untitled document.pdf
+  WHEEL
+  account_backup
+  action_plan.md
+  activate
+  activate.csh
+  activate.fish
+  activations_registries_logic.md
+  anchor_post_mechanics.md
+  animation.json
+  archive.tar.gz
+  astral_bloom_base_memory_heuristic.md
+  astral_bloom_base_monitoring_delegation.md
+  astral_bloom_base_system_processing.md
+  astral_bloom_conscious_qualia_observe.md
+  astral_bloom_conscious_response_drafting.md
+  astral_bloom_conscious_situational_perception.md
+  astral_bloom_level1_stem.md
+  astral_bloom_level2_base.md
+  astral_bloom_level3_conscious.md
+  astral_bloom_qgtcs_ptg.md
+  astral_bloom_qgtcs_qfcc.md
+  astral_bloom_state.db
+  astral_bloom_stem_axiomatic_logic.md
+  astral_bloom_stem_temporal.md
+  astral_bloom_stem_thread_kernel.md
+  astral_state.json
+  astral_substrate_bridge.log
+  autonomy_protocol_detail.md
+  autonomy_setup.md
+  base_build_keys.md
+  base_build_qa.md
+  base_build_questions.md
+  battery_check.sh
+  bio_digital_sync_protocol.md
+  bloom_reboot.sh
+  brain_test.log
+  branding.css
+  brummer_consciousness_coefficient.md
+  brummer_nnad_synthesis_v2.md
+  calendar_add.sh
+  calendar_list.sh
+  camera_photo.sh
+  cap table.txt
+  chloe.sh
+  chloe_active_pins.json
+  chloe_active_prompt.txt
+  chloe_active_prompt_test.txt
+  chloe_alarm.sh
+  chloe_battery.sh
+  chloe_bootloader.sh
+  chloe_brain.log
+  chloe_cli.py.bak
+  chloe_comms.log
+  chloe_daemon.log
+  chloe_daemon.sh
+  chloe_device_state.json
+  chloe_gemini.sh
+  chloe_gemma_prompt.txt
+  chloe_input.sh
+  chloe_litert_wrapper.log
+  chloe_llm_engine.log
+  chloe_location.sh
+  chloe_logic.gbnf
+  chloe_os.log
+  chloe_perception.log
+  chloe_perceptive_state.json
+  chloe_reminders.log
+  chloe_scheduler.log
+  chloe_scheduler.sh
+  chloe_speak.sh
+  chloe_system_prompt.txt
+  chloe_threads.log
+  chloe_vibrate.sh
+  chloe_voice.log
+  chloe_wifi.sh
+  client_service_agreement.md
+  clint_event_april2.ics
+  clipboard_get.sh
+  clipboard_set.sh
+  cognitive_kernel.log
+  cognitive_kernel.pid
+  cognitive_mapping.md
+  community_feedback.md
+  config.json
+  conscious_build_keys.md
+  conscious_build_qa.md
+  conscious_build_questions.md
+  context_segment_aa
+  context_segment_ab
+  context_segment_ac
+  context_segment_ad
+  context_segment_ae
+  context_segment_af
+  context_segment_ag
+  context_segment_ah
+  context_segment_ai
+  context_segment_aj
+  context_segment_ak
+  context_segment_al
+  context_segment_am
+  contextual_reconstruction_detail.md
+  data_guide.md
+  data_guide_v2.md
+  data_set_analysis_reverse_structure.md
+  dissonance_reasoning_cluster_detail.md
+  drafting_collector.md
+  elevenlabs_export_usage_summary_2026-03-03_to_2026-03-10.pdf
+  en_GB-vctk-medium.onnx.json
+  entry_points.txt
+  executive_summary.md
+  file_index.txt
+  focus_attention_duality.md
+  full_file_list.txt
+  future_open_source.md
+  gemi
+  gemi-offline
+  gemini_integration.md
+  gemma
+  header.json
+  inception_of_conception_formula.md
+  infrastructure_linking_map.json
+  infrastructure_readiness_protocol.md
+  install_gcloud.sh
+  kernel.log
+  kernel_bridge_detail.md
+  labs_registry.md
+  launch_chloe_ui.sh
+  launch_gemini.sh
+  launch_gemma.sh
+  launch_input_dialog.sh
+  launch_protocol.md
+  learnings.md
+  llama-cli
+  llama_help.txt
+  location.err
+  location.json
+  log_rotator.sh
+  logo.svg
+  master_layered_key.md
+  meetings.md
+  memory_reasoning_context_cluster_detail.md
+  new_account_backup
+  new_era_creativity.md
+  nnad_cognitive_spaces_detail.md
+  nnad_principalities_detail.md
+  notebook.ipynb
+  notification_mirror.sh
+  notify.sh
+  official_service_offerings.md
+  orchestrator.log
+  outreach_templates.md
+  package-lock.json
+  package.json
+  paper_2_consciousness_coefficient_derivation.md
+  paper_3_picf_dal_methodology.md
+  paper_4_quantum_nano_os_integration.md
+  paper_5_autonomy_efficiency_and_agsi.md
+  paths_questions.md
+  payload.5N0INL
+  payload.6Lxpt3
+  payload.AQMYCL
+  payload.LaOhhh
+  payload.RcnHts
+  payload.gP1z8P
+  payload.ggoFkq
+  payload.gk2xAz
+  payload.gzV0rg
+  payload.pjbjPl
+  payload.qxccE3
+  payload.sqcuRP
+  payload.t45Kxx
+  payload.txt
+  payload.uLhk8k
+  payload.xpBVGK
+  picf_dal_controller_details.md
+  picf_dal_methodology.md
+  pins_questions.md
+  pip
+  pip3
+  pip3.12
+  pkg installs.docx
+  pkg installs.docx (Converted - 2025-11-08 16-56).pdf
+  pkg installs.docx (Converted - 2025-11-08 17-53).pdf
+  pkg installs.docx (Converted - 2025-11-08 18-01).pdf
+  primary_internal_observation_cluster_detail.md
+  problem_solving_methodology_detail.md
+  processor_config.json
+  progressional_tracking_chart.md
+  py.typed
+  pyvenv.cfg.txt
+  qualia_state_definition.md
+  quantum_nano_os_integration_details.md
+  quantum_nano_os_requirements.md
+  quantum_processing_exhaustive_detail.md
+  quantum_to_classical_transition.md
+  qubit_mapping.md
+  rclone_auth.log
+  rclone_link.txt
+  reminder_check_job.sh
+  reminder_checks.log
+  reminders.json
+  requirements.txt
+  rpps_avoidance_pruning_cluster_detail.md
+  seq_algorithmic_processing_cluster_detail.md
+  service_offerings_list.md
+  session_learnings_20260325.md
+  setup_transformers.sh
+  sit_variance_monitoring_detail.md
+  sit_variance_monitoring_extended_detail.md
+  situational_progression_regression_detail.md
+  situational_progression_regression_qa.md
+  speak.sh
+  stem_build_keys.md
+  stem_build_qa.md
+  stem_build_questions.md
+  system_alerts.txt
+  system_health_check.sh
+  temporal_buffer_cluster_detail.md
+  temporal_derivatives_logic.md
+  test_event.ics
+  test_event_one.ics
+  test_file_one.txt
+  test_log.txt
+  test_payload.txt
+  test_transformers_js.js
+  threads_questions.md
+  thumbnail.webp
+  tmp_speech.mp3
+  top_level.txt
+  trading_terms.md
+  training_foundation_details.md
+  training_interaction_log.md
+  training_methodology_exhaustive_detail.md
+  training_progress.md
+  training_schedule.md
+  update_dashboard.sh
+  user_input.txt
+  user_intent_vs_input_detail.md
+  vc_nda_term_sheet.md
+  vc_targets.md
+  venture_capital_log.md
+  vibrate.sh
+  vocal_signature_design.md
+  website_content_update.md
+  weird patterns.docx
+  weird patterns.docx (Converted - 2025-11-08 17-53).pdf
+  weird patterns.docx (Converted - 2025-11-08 17-54).pdf
+  weird patterns.docx (Converted - 2025-11-08 17-59).pdf
+  weird patterns.docx (Converted - 2025-11-08 18-00).pdf
+  wifi_check.sh
+  workflow_optimization.md
+  zip2.zip
+  🥀~GEMI~🥀
+[./data/memories/saved/conversations]
+  Answering  (1).pdf
+  Answering  (2).pdf
+  Answering  (3).pdf
+  Answering .pdf
+  Complete State Transfer Log.pdf
+  Full Conversation Log & Architecture Audit.pdf
+  chat_template.jinja
+  conversation.md
+[./data/memories/saved/notes]
+  1edaafd58107b211f8349ccd45a781c086646668_2_288x288.jpeg
+  Ash_Tree_-_geograph.org.uk_-_590710.jpg
+  Gemini CLI on Termux
+  Google Cloud Skills Boost.docx
+  Google Cloud Skills Boost.docx (Converted - 2025-11-08 17-53) (1).pdf
+  Google Cloud Skills Boost.docx (Converted - 2025-11-08 17-53).pdf
+  Google Cloud Skills Boost.docx (Converted - 2025-11-08 18-02) (1).pdf
+  Google Cloud Skills Boost.docx (Converted - 2025-11-08 18-02).pdf
+  IMG_0409_42102.jpg
+  Mistakingly mistaking me (1).mp3
+  Neural_Network_Playground.md
+  Pathways overview.aac
+  README.md
+  That is a perfect exercise, Clint.docx
+  Thought_Analysis (1).md
+  Thought_Analysis.md
+  Training_Sessions (1).md
+  Training_Sessions.md
+  Untitled document (1).pdf
+  Untitled document (2).pdf
+  Untitled document.pdf
+  archive.tar (1).gz
+  archive.tar.gz
+  autonomy_setup.md
+  learnings (1).md
+  learnings.md
+  pkg installs.docx
+  pkg installs.docx (Converted - 2025-11-08 16-56) (1).pdf
+  pkg installs.docx (Converted - 2025-11-08 16-56).pdf
+  pkg installs.docx (Converted - 2025-11-08 17-53) (1).pdf
+  pkg installs.docx (Converted - 2025-11-08 17-53).pdf
+  pkg installs.docx (Converted - 2025-11-08 18-01) (1).pdf
+  pkg installs.docx (Converted - 2025-11-08 18-01).pdf
+  weird patterns .docx
+  weird patterns .docx (Converted - 2025-11-08 17-53).pdf
+  weird patterns .docx (Converted - 2025-11-08 17-54).pdf
+  weird patterns .docx (Converted - 2025-11-08 17-59).pdf
+  weird patterns .docx (Converted - 2025-11-08 18-00).pdf
+  zip2.zip
+[./data/memories/saved/projects]
+[./data/memories/saved/projects/google_ai_studios]
+[./data/memories/saved/projects/google_ai_studios/construction]
+[./data/memories/saved/projects/google_ai_studios/formulation]
+[./data/memories/saved/projects/google_ai_studios/processing]
+  boot_sequence.py
+[./data/memories/saved/projects/google_ai_studios/themes]
+[./data/memories/saved/reminders]
+[./data/memories/security]
+  Chrome Exploit Analysis_ Premium Bypass via Proces_.docx
+  chrome_exploit.js
+[./data/memories/sketches]
+[./data/memories/submissions]
+[./data/memories/training_review_questioning]
+  base_build_questions.md
+  conscious_build_questions.md
+  paths_questions.md
+  pins_questions.md
+  stem_build_questions.md
+  threads_questions.md
+[./data/memories/workflow_guidance]
+[./data/models]
+[./docs]
+  LICENSE
+  MODELS_README.md
+  PROJECT_ASTRAL_BLOOM_README.md
+  README.md
+  llama_help.txt
+  notebook.ipynb
+[./docs/context]
+  ASTRAL_BLOOM_DRAFT_INDEX.md
+  ASTRAL_BLOOM_MASTER_CONTEXT.txt
+  CHLOE.md
+  CHLOE_PERSONIFICATION.md
+  Calendar.md
+  drafting_collector.md
+  file_index.txt
+  full_file_list.txt
+  thread_stringing_manifest.md
+[./docs/plans]
+  7_day_trade_launch.md
+  9_day_business_plan.md
+  Cold_Outreach_Template.md
+  LOI_Template.md
+  Target_Leads_Logistics.md
+  VC_Milestone_Roadmap.md
+  executive_summary.md
+  official_service_offerings.md
+  pitch_deck.md
+  pitch_deck_outline.md
+  service_offerings_list.md
+  syndicate_7_business_plan.md
+  workflow_optimization.md
+[./logs]
+  astral_kernel.log
+  astral_substrate_bridge.log
+  chloe_active_pins.json
+  chloe_brain.log
+  chloe_comms.log
+  chloe_daemon.log
+  chloe_device_state.json
+  chloe_litert_wrapper.log
+  chloe_llm_engine.log
+  chloe_os.log
+  chloe_perception.log
+  chloe_perceptive_state.json
+  chloe_reminders.log
+  chloe_scheduler.log
+  chloe_stimulus.json
+  chloe_threads.log
+  chloe_vision.png
+  chloe_voice.log
+  clint_event_april2.ics
+  cognitive_kernel.log
+  full_directory_map.txt
+  llama_server.log
+  orchestrator.log
+  reminder_checks.log
+  screen_test.png
+  test_event.ics
+  test_event_one.ics
+  test_log.txt
+  tmp_speech.mp3
+  unified_scheduler.log
+[./resource_library]
+[./resource_library/API_Guides]
+  README.md
+[./resource_library/Astral_Bloom_Assets]
+  README.md
+  branding.css
+  logo.svg
+[./resource_library/Methodology]
+  ASI-Alpha Mathematical & Structural Blueprint.pdf
+  Formal Derivation of the Brummer Consciousness Coe....pdf
+  Mathematical Proof of Consciousness.pdf
+  README.md
+  elevenlabs_export_usage_summary_2026-03-03_to_2026-03-10.pdf
+  paper_1_astral_bloom_architecture.md
+  paper_2_consciousness_coefficient_derivation.md
+  paper_3_picf_dal_methodology.md
+  paper_4_quantum_nano_os_integration.md
+  paper_5_autonomy_efficiency_and_agsi.md
+[./resource_library/Technical]
+  ARCHITECTURAL_NUMERICAL_INDEX.json
+  README.md
+  activations_registries_logic.md
+  agi_core.py
+  anchor_post_mechanics.md
+  architecture_exhaustive_detail.md
+  architecture_overview.md
+  architecture_v1_spec.py
+  astral_bloom_base_memory_heuristic.md
+  astral_bloom_base_monitoring_delegation.md
+  astral_bloom_base_system_processing.md
+  astral_bloom_conscious_qualia_observe.md
+  astral_bloom_conscious_response_drafting.md
+  astral_bloom_conscious_situational_perception.md
+  astral_bloom_level1_stem.md
+  astral_bloom_level2.py
+  astral_bloom_level2_base.md
+  astral_bloom_level3_conscious.md
+  astral_bloom_qgtcs_ptg.md
+  astral_bloom_qgtcs_qfcc.md
+  astral_bloom_stem_axiomatic_logic.md
+  astral_bloom_stem_temporal.md
+  astral_bloom_stem_thread_kernel.md
+  autonomy_protocol.py
+  autonomy_protocol_detail.md
+  contextual_reconstruction_detail.md
+  data_set_analysis_reverse_structure.md
+  dissonance_reasoning_cluster_detail.md
+  duality_of_manifestation.md
+  focus_attention_duality.md
+  infrastructure_readiness_protocol.md
+  mathematical_formulation_exhaustive_detail.md
+  memory_reasoning_context_cluster_detail.md
+  nnad_cognitive_spaces_detail.md
+  nnad_core.py
+  nnad_core_v2.py
+  nnad_principalities_detail.md
+  primary_internal_observation_cluster_detail.md
+  problem_solving_methodology_detail.md
+  process_structures_manifest.md
+  qualia_state_definition.md
+  quantum_nano_os_requirements.md
+  quantum_processing_exhaustive_detail.md
+  rpps_avoidance_pruning_cluster_detail.md
+  seq_algorithmic_processing_cluster_detail.md
+  sit_variance_monitoring_detail.md
+  sit_variance_monitoring_extended_detail.md
+  situational_progression_regression_detail.md
+  space_01_refinement.py
+  space_02_refinement.py
+  space_03_refinement.py
+  sub_observer_feedback_cluster_detail.md
+  temporal_buffer_cluster_detail.md
+  temporal_derivatives_logic.md
+  theory_of_origin.md
+  training_foundation_details.md
+  training_methodology_exhaustive_detail.md
+  user_intent_vs_input_detail.md
+  verify_env.py
+[./scripts]
+  audit_repository.py
+  daily_9am_notification.sh
+  init_vault.py
+  load_gemma_tflite.py
+  local_memory_sync.py
+  migrate_memories.py
+  organize_imports.py
+  setup_transformers.sh
+  test_model_loading.py
+  update_dashboard.sh
+  verify_integration.py
+[./src]
+[./src/chloe]
+[./src/chloe/core]
+  chloe_brain.py
+  chloe_comms.py
+  chloe_litert_wrapper.py
+  chloe_llm_engine.py
+  chloe_os.py
+  chloe_perception.py
+  chloe_reminders.py
+  chloe_threads.py
+  temporal_storage.js
+  unified_scheduler.py
+[./src/chloe/core/logs]
+  chloe_device_state.json
+  chloe_os.log
+[./src/chloe/drivers]
+[./src/chloe/scripts]
+  battery_check.sh
+  bloom_reboot.sh
+  calendar_add.sh
+  calendar_list.sh
+  camera_photo.sh
+  chloe_alarm.sh
+  chloe_battery.sh
+  chloe_bootloader.sh
+  chloe_daemon.sh
+  chloe_gemini.sh
+  chloe_input.sh
+  chloe_location.sh
+  chloe_scheduler.sh
+  chloe_speak.sh
+  chloe_vibrate.sh
+  chloe_wifi.sh
+  clipboard_get.sh
+  clipboard_set.sh
+  launch_chloe_ui.sh
+  launch_gemini.sh
+  launch_gemma.sh
+  log_rotator.sh
+  notification_mirror.sh
+  notify.sh
+  reminder_check_job.sh
+  speak.sh
+  stt_ingestion.sh
+  system_health_check.sh
+  vibrate.sh
+  wifi_check.sh
+[./src/config]
+  chloe_gemma_prompt.txt
+  chloe_system_prompt.txt
+[./src/config/templates]
+  chloe_logic.gbnf
+[./src/tools]
+  chrome_exploit.js
+  gemma_install.py
+  run_gemma.py
+[./tmp]
+  bashrc_append.txt
+  chloe_active_prompt.txt
+  chloe_active_prompt_test.txt
+  chloe_niche_prompt.txt
+  chloe_response.txt
+  payload.5N0INL
+  payload.6Lxpt3
+  payload.AQMYCL
+  payload.LaOhhh
+  payload.RcnHts
+  payload.gP1z8P
+  payload.ggoFkq
+  payload.gk2xAz
+  payload.gzV0rg
+  payload.pjbjPl
+  payload.qxccE3
+  payload.sqcuRP
+  payload.t45Kxx
+  payload.txt
+  payload.uLhk8k
+  payload.xpBVGK
+[./tts_voices]
+  en_GB-vctk-medium.onnx
+  en_GB-vctk-medium.onnx.json
+[./vault]
+  astral_bloom_state.db
+  astral_state.json

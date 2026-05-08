@@ -38,8 +38,12 @@ def clear_screen():
 
 def chloe_speak(text):
     speech_text = text.split("```")[0].strip()
+    # Remove thought blocks before speaking to avoid vocalizing internal monologue
+    import re
+    speech_text = re.sub(r"<think>.*?</think>", "", speech_text, flags=re.DOTALL).strip()
+    
     if speech_text:
-        subprocess.Popen([SPEAK_SCRIPT, speech_text], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.Popen(["bash", SPEAK_SCRIPT, speech_text], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def generate_ui(momentum, last_key, status="PRIMED", threads="8 (Maximized)"):
     # Header Construction

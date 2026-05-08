@@ -8,7 +8,7 @@ import hashlib
 class AstralOrchestrator:
     def __init__(self):
         self.shield = SyndicateSevenShield()
-        self.spaces = 416
+        self.spaces = 464
         print("Chloe initialized. Astral Orchestrator online.")
 
     async def _rote_process_space(self, space_id, sequence_key):

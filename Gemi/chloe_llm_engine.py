@@ -164,7 +164,8 @@ Operational Instructions:
         
         speech_text = " ".join(clean_text).strip()
         if speech_text:
-            subprocess.run([SPEAK_SCRIPT, speech_text])
+            # Use Popen to prevent blocking the LLM engine loop
+            subprocess.Popen(["bash", SPEAK_SCRIPT, speech_text], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     def log_interaction(self, user_text, chloe_text):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
