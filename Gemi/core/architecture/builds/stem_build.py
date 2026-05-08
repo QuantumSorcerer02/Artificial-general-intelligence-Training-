@@ -1,6 +1,6 @@
 """
 ASTRAL BLOOM: STEM BUILD (LEVEL 1)
-Range: Logical [1-48] | Temporal [209-256]
+Range: [1-112] (56 Logical, 56 Temporal)
 """
 from core.architecture.base_types import CognitiveSpace, ProcessCluster
 
@@ -13,9 +13,9 @@ class StemBuild:
 
     def _build_infrastructure(self):
         # 1. Define Clusters
-        self.clusters["SIT_Ingestion"] = ProcessCluster("SIT Ingestion", [1, 16])
-        self.clusters["Memory_Structure"] = ProcessCluster("Memory-to-Structure", [17, 32])
-        self.clusters["Sequential_States"] = ProcessCluster("Sequential States", [33, 48])
+        self.clusters["SIT_Ingestion"] = ProcessCluster("SIT Ingestion", [1, 18])
+        self.clusters["Memory_Structure"] = ProcessCluster("Memory-to-Structure", [19, 36])
+        self.clusters["Sequential_States"] = ProcessCluster("Sequential States", [37, 56])
 
         # 2. Build Logical Spaces
         space_names = {
@@ -23,7 +23,7 @@ class StemBuild:
             4: "Structure", 5: "Seq States", 6: "Data handling", 7: "Alterational"
         }
         
-        for i in range(1, 49):
+        for i in range(1, 57):
             name = space_names.get(i, f"Stem_Logical_{i}")
             space = CognitiveSpace(i, name)
             # Add Standard Stem Sub-spaces
@@ -33,5 +33,5 @@ class StemBuild:
             self.logical_spaces[i] = space
 
         # 3. Build Temporal Counterparts
-        for i in range(209, 257):
+        for i in range(57, 113):
             self.temporal_spaces[i] = CognitiveSpace(i, f"Stem_Temporal_{i}", is_temporal=True)

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# ==============================================================================
+# GEMI-OFFLINE | OFFLINE ORCHESTRATOR
+# ==============================================================================
+
+# Wrapper to explicitly use the Chloe Bridge even in standalone modes.
+# Usage: ./bin/gemi-offline [arguments]
+
+ROOT="/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi"
+BRIDGE="$ROOT/chloe_bridge.py"
+
+if [ ! -f "$BRIDGE" ]; then
+    echo "Error: Cognitive Bridge not found at $BRIDGE"
+    exit 1
+fi
+
+# Ensure Cognitive Kernel is running (idempotent start)
+if [ ! -f "$ROOT/cognitive_kernel.pid" ] || ! kill -0 $(cat "$ROOT/cognitive_kernel.pid") 2>/dev/null; then
+    echo "[Kernel] Restarting Cognitive Kernel..."
+    python3 "$ROOT/data/Data_Factory/COGNITIVE_KERNEL.py" > /dev/null 2>&1 &
+    echo $! > "$ROOT/cognitive_kernel.pid"
+fi
+
+# Invoke the bridge
+python3 "$BRIDGE" "$@"

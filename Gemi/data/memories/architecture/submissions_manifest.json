@@ -1,0 +1,61 @@
+{
+  "submissions": [
+    {
+      "target": "Journal of Machine Learning",
+      "topic": "PICF-DAL Methodology",
+      "status": "In Preparation",
+      "directory": "data/Data_Factory/PICF-DAL/"
+    },
+    {
+      "target": "Journal of Machine Learning",
+      "topic": "Astral Bloom Neural Network Architecture",
+      "status": "In Preparation",
+      "directory": "data/Data_Factory/Neural_Network_Architecture/"
+    },
+    {
+      "target": "Cornwall",
+      "topic": "Quantum State Processing Algorithm",
+      "status": "In Preparation",
+      "directory": "data/Data_Factory/Quantum_State_Processing/"
+    }
+  ],
+  "commercial_outreach": [
+    {
+      "target": "Jozi Angels",
+      "topic": "Seed Investment Pitch",
+      "status": "Drafted",
+      "date": "2026-04-26"
+    },
+    {
+      "target": "Vodacom Group",
+      "topic": "Edge-AI Digital Twin Pilot",
+      "status": "Drafted",
+      "date": "2026-04-26"
+    },
+    {
+      "target": "Anglo American",
+      "topic": "Intelligent Mine Edge Pilot",
+      "status": "Drafted",
+      "date": "2026-04-26"
+    },
+    {
+      "target": "Sasol",
+      "topic": "Precision Agriculture Edge Pilot",
+      "status": "Drafted",
+      "date": "2026-04-26"
+    },
+    {
+      "target": "4Sight Holdings",
+      "topic": "Industrial AI Integration Pilot",
+      "status": "Drafted",
+      "date": "2026-04-26"
+    },
+    {
+      "target": "DataProphet",
+      "topic": "Zero-Defect Manufacturing Pilot",
+      "status": "Drafted",
+      "date": "2026-04-26"
+    }
+  ],
+  "last_updated": "2026-04-26"
+}

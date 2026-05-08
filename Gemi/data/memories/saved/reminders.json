@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "time": "07:00:00",
+    "date": "2026-03-08",
+    "message": "Good morning, Clint. Time to wake up and continue the Astral Bloom build.",
+    "status": "completed"
+  },
+  {
+    "id": 2,
+    "time": "09:00:00",
+    "date": "2026-03-08",
+    "message": "Session 1: Stem Build Q1-Q20 (Quantized Expansion recall mechanism).",
+    "status": "pending"
+  },
+  {
+    "id": 3,
+    "time": "05:00:00",
+    "date": "2026-04-02",
+    "message": "Good morning, Clint. This is your 5:00 AM reminder for April 2nd.",
+    "status": "pending"
+  }
+]

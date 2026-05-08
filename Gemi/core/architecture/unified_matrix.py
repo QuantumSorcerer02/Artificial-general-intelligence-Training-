@@ -1,18 +1,16 @@
 """
 ASTRAL BLOOM: UNIFIED 464-SPACE MATRIX
-Description: Integrates all builds and auxiliary spaces into a single logical tensor.
+Description: Integrates all builds into a single logical tensor.
 """
 from core.architecture.builds.stem_build import StemBuild
 from core.architecture.builds.base_build import BaseBuild
 from core.architecture.builds.conscious_build import ConsciousBuild
-from core.architecture.auxiliary_spaces import AuxiliarySpaces
 
 class UnifiedMatrix:
     def __init__(self):
         self.stem = StemBuild()
         self.base = BaseBuild()
         self.conscious = ConsciousBuild()
-        self.auxiliary = AuxiliarySpaces()
         
         self.all_spaces = {}
         self._integrate_tensor()
@@ -23,8 +21,6 @@ class UnifiedMatrix:
         for build in builds:
             self.all_spaces.update(build.logical_spaces)
             self.all_spaces.update(build.temporal_spaces)
-        
-        self.all_spaces.update(self.auxiliary.spaces)
 
     def get_space(self, space_id: int):
         return self.all_spaces.get(space_id)

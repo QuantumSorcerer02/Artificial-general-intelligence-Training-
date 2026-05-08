@@ -1,0 +1,39 @@
+{
+  "general": {
+    "sessionRetention": {
+      "enabled": true,
+      "maxAge": "30d",
+      "warningAcknowledged": true
+    }
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "ui": {
+    "theme": "Holiday"
+  },
+  "model": {
+    "name": "gemini-3-flash-preview"
+  },
+  "agents": {
+    "overrides": {
+      "codebase_investigator": {
+        "modelConfig": {
+          "generateContentConfig": {
+            "temperature": 1
+          }
+        }
+      },
+      "generalist": {
+        "modelConfig": {
+          "model": "inherit",
+          "generateContentConfig": {
+            "temperature": 2
+          }
+        }
+      }
+    }
+  }
+}

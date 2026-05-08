@@ -1,0 +1,33 @@
+# Build Artifacts
+llama-cli
+llama.cpp/
+data/models/
+bin/
+so/
+*.pyc
+__pycache__/
+
+# Dependencies/Versions
+=*
+requirements.txt
+node_modules/
+
+# Temporary Files
+*.pid
+*.err
+*.tmp
+*.log
+data/memories/account_backup
+data/memories/new_account_backup
+
+# System/Environment
+.env
+.DS_Store
+.vscode/
+.idea/
+
+# Specific project noise
+test_file_one.txt
+test_payload.txt
+test_transformers_js.js
+chloe_logic.gbnf

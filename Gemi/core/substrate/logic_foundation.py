@@ -16,7 +16,7 @@ class AdaptiveState:
 
 class SubstrateFoundation:
     def __init__(self):
-        self.total_spaces = 416
+        self.total_spaces = 464
         self.logical_spaces = 208
         self.temporal_spaces = 208
         self.unity_constant = 1.0

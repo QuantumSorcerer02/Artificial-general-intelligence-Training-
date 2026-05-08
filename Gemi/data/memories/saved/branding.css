@@ -1,0 +1,29 @@
+:root {
+  --primary-quantum: #00f3ff; /* Neon Cyan */
+  --secondary-void: #1a1a2e; /* Deep Space Blue */
+  --accent-bloom: #9d00ff; /* Electric Purple */
+  --text-primary: #e0e0e0;
+  --text-muted: #888888;
+  --background-dark: #0f0f0f;
+  --font-main: 'Inter', 'Roboto', sans-serif;
+  --shadow-quantum: 0 0 15px rgba(0, 243, 255, 0.4);
+}
+
+.syndicate-logo {
+  fill: var(--primary-quantum);
+  filter: drop-shadow(var(--shadow-quantum));
+}
+
+.quantum-card {
+  background: rgba(26, 26, 46, 0.8);
+  border: 1px solid var(--primary-quantum);
+  border-radius: 8px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+}
+
+.quantum-gradient {
+  background: linear-gradient(135deg, var(--secondary-void) 0%, var(--accent-bloom) 100%);
+}
