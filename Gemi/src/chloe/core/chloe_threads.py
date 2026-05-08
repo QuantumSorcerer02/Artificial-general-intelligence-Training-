@@ -2,7 +2,6 @@ import json
 import os
 import time
 from datetime import datetime
-from core.substrate.logic_foundation import SequentialKeyLayering, AdaptiveState
 
 class ChloeThreads:
     """
@@ -14,26 +13,18 @@ class ChloeThreads:
         self.pins_file = os.path.join(self.root_dir, "logs/chloe_active_pins.json")
         self.scheduler_log = os.path.join(self.root_dir, "logs/chloe_scheduler.log")
         self.active_pins = {}
-        self.adaptive_states = [AdaptiveState(i) for i in range(1, 6)]
-
-    def save_pins(self):
-        # Generate an Anchored Sequential Key for the thread lifecycle
-        thread_anchor_key = SequentialKeyLayering.generate_layered_key(self.active_pins, self.adaptive_states)
-        self.active_pins["_anchor_key"] = thread_anchor_key
-
-        with open(self.pins_file, "w") as f:
-            json.dump(self.active_pins, f, indent=2)
-            
+        
     def load_pins(self):
         if os.path.exists(self.pins_file):
-            try:
-                with open(self.pins_file, "r") as f:
-                    self.active_pins = json.load(f)
-            except Exception:
-                self.active_pins = {}
+            with open(self.pins_file, "r") as f:
+                self.active_pins = json.load(f)
         else:
-            self.active_pins = {}
-
+            self.active_pins = {
+                "P1": {"name": "Stem Build", "status": "Stable"},
+                "P2": {"name": "Base Build", "status": "Stable"},
+                "P3": {"name": "Conscious Build", "status": "Expanding"}
+            }
+            
     def set_pin(self, pin_id, name, status="Active"):
         """
         Manages the active logic 'pins' that represent active focus points.
@@ -45,6 +36,10 @@ class ChloeThreads:
             "last_updated": datetime.now().isoformat()
         }
         self.save_pins()
+        
+    def save_pins(self):
+        with open(self.pins_file, "w") as f:
+            json.dump(self.active_pins, f, indent=2)
             
     def log_scheduler_event(self, message):
         """

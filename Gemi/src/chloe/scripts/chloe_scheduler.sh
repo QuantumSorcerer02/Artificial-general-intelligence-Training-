@@ -4,7 +4,9 @@
 
 echo "Chloe Background Scheduler: ACTIVE"
 
+ROOT_DIR="/data/data/com.termux/files/home/Project-Astral-Bloom/Gemi"
+
 while true; do
-    python3 chloe_reminders.py check
+    python3 "$ROOT_DIR/src/chloe/core/chloe_reminders.py" check
     sleep 30  # Check every 30 seconds
 done

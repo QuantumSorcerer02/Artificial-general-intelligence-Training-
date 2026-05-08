@@ -15,7 +15,7 @@ if [ -n "$STT_OUTPUT" ]; then
     echo "$STT_OUTPUT" > "$OUTPUT_FILE"
     
     # Optional: trigger a response directly if tied into the unified scheduler
-    # python3 $ROOT_DIR/chloe_cli.py --direct "$STT_OUTPUT"
+    # python3 $ROOT_DIR/src/chloe/core/chloe_cli.py --direct "$STT_OUTPUT"
 else
     echo -e "\033[1;31m[STEM BUILD]\033[0m No input detected or STT failed. Check microphone permissions."
 fi
